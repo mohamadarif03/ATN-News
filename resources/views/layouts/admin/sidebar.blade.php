@@ -40,7 +40,7 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="{{url('berita laris')}}">Berita Terlaris</a></li>
+                        <li><a href="{{url('berita laris')}}">Berita Terpopuler</a></li>
                         <li><a href="{{url('daftar berita')}}">Berita Dibuat</a></li>
                         
                     </ul>

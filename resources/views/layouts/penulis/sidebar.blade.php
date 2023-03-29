@@ -27,7 +27,7 @@
                         <li><a href="{{url('berita ditolak')}}">Berita Ditolak</a></li>
                         <li><a href="{{url('berita disetujui')}}">Berita Disetujui</a></li>
                         <li><a href="{{url('berita terlaris')}}">Berita Terpopuler</a></li>
-                        <li><a href="{{url('dibuat')}}">Berita Dibuat</a></li>
+                        <li><a href="{{url('dibuat')}}">Berita Saya</a></li>
 
                     </ul>
                 </li>

@@ -1,0 +1,22 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 08 Feb 2023 17:30:18 at https://coderthemes.com/uplon/layouts/vertical/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://coderthemes.com/uplon/layouts/vertical/index.html -O1 "D:\program\template\acc4" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/jstree/32px.png (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/jstree/style.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/jstree/throbber.gif (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/jstree/style.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/jstree/40px.png (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/jstree/style.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/img/sprite-green.png (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/hopscotch/hopscotch.min.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/img/switch.png (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/multiselect/multi-select.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/fonts/dropify.eot (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/dropify/dropify.min.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/fonts/dropify.woff (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/dropify/dropify.min.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/fonts/dropify.ttf (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/dropify/dropify.min.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/fonts/dropify.svg (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/dropify/dropify.min.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/img/loading.gif (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/x-editable/bootstrap-editable.css)
+17:32:55	Error: 	"Not Found" (404) at link https://coderthemes.com/uplon/layouts/vertical/assets/libs/img/clear.png (from https://coderthemes.com/uplon/layouts/vertical/assets/libs/x-editable/bootstrap-editable.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 37 seconds : 302 links scanned, 290 files written (22451779 bytes overall) [12595928 bytes received at 80228 bytes/sec], 12531675 bytes transferred using HTTP compression in 196 files, ratio 20%, 13.1 requests per connection
+(11 errors, 0 warnings, 0 messages)

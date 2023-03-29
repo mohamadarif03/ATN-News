@@ -1,0 +1,24 @@
+.ellipsis{
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+    -webkit-line-clamp: 5!important;
+    -webkit-box-orient: vertical!important;
+    display: -webkit-box!important;
+    word-break: break-word!important;
+}
+.ellipsis1{
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+    -webkit-line-clamp: 1!important;
+    -webkit-box-orient: vertical!important;
+    display: -webkit-box!important;
+    word-break: break-word!important;
+}
+.ellipsis3{
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+    -webkit-line-clamp: 2!important;
+    -webkit-box-orient: vertical!important;
+    display: -webkit-box!important;
+    word-break: break-word!important;
+}

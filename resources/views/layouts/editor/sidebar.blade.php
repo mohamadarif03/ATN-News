@@ -28,14 +28,8 @@
                     {{-- <li><a href="{{url('edite')}}">Edit Berita</a></li> --}}
                     <li><a href="{{url('setujue1')}}">Berita Yang Disetujui</a></li>
                     <li><a href="{{url('tolake1')}}">Berita Yang Ditolak</a></li>
-                    <li><a href="{{url('dibuat_editor')}}">Berita Dibuat</a></li>
+                    <li><a href="{{url('dibuat_editor')}}">Berita Saya</a></li>
                 </ul>
-            </li>
-            <li>
-                <a href="{{url('aturane')}}">
-                    <i class="mdi mdi-message-settings-variant"></i>
-                    <span> Aturan </span>
-                </a>
             </li>
            
         </ul>

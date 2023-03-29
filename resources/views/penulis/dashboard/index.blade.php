@@ -146,6 +146,7 @@
                                                 <th>No</th>
                                                 <th>Judul Berita</th>
                                                 <th>Kategori</th>
+                                                <th>Detail</th>
                                                 <th>Info Dibaca</th>
 
                                             </tr>
@@ -158,6 +159,7 @@
                                                     <td>{{ $i }}</td>
                                                     <td>{{ $row->judul }}</td>
                                                     <td>{{ $row->kategori->name }}</td>
+                                                    <td><a href="/isi/{{ $row->id }}"><i class="mdi mdi-eye"></i></a></td>
                                                     <td>{{ $row->view }}
                                                         <i class="mdi mdi-eye"></i>
                                                     </td>

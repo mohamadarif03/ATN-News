@@ -115,8 +115,7 @@
                                                     <a href="/isi/{{ $berita->id }}">
                                                         <div class="ellipsis3 card-text" style="color: black">
                                                             {!!$berita->deskripsi!!}</div>
-                                                        <div class="ellipsis card-text" style="color: black">
-                                                            {!! $berita->isi !!}</div>
+                                                        
                                                             @foreach ($berita->tags as $tag)
                                                                 
 

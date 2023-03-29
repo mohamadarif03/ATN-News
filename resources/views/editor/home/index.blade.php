@@ -122,9 +122,10 @@
                                                 <table class="table table-nowrap">
                                                     <thead>
                                                         <tr>
-                                                            <th class="col-md-1">No</th>
-                                                            <th class="col-md-5">Judul</th>
-                                                            <th class="col-md-2 text-center">Aksi</th>
+                                                            <th>No</th>
+                                                            <th>Judul</th>
+                                                            <th>Detail</th>
+                                                            <th class="text-center">Aksi</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -134,6 +135,7 @@
                                                         <td>{{ $i }}</td>
                                                         
                                                           <td style="font-weight: bold;"><a href="/isi/{{ $row->id }}" style="color:black">{{ $row->judul }}</a></td>
+                                                          <td><a href="/isi/{{ $row->id }}"><i class="mdi mdi-eye"></i></a></td>
                                                       
                                                         <td>
                                                           <form onsubmit="return confirm('Yakin Ingin Menerima Berita Ini?')" class="d-inline" action="/terimaberita/{{ $row->id }}" method="POST" enctype="multipart/form-data">

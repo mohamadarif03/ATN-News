@@ -27,39 +27,9 @@
                         <li><a href="{{url('berita ditolak')}}">Berita Ditolak</a></li>
                         <li><a href="{{url('berita disetujui')}}">Berita Disetujui</a></li>
                         <li><a href="{{url('berita terlaris')}}">Berita Terpopuler</a></li>
-                        <li><a href="{{url('dibuat')}}">Berita Dibuat</a></li>
+                        <li><a href="{{url('dibuat')}}">Berita Saya</a></li>
 
                     </ul>
-                </li>
-                <!-- <li>
-                        <a href="calendar.html">
-                            <i class="mdi mdi-newspaper"></i>
-                            <span> Berita </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="ditolak.html">
-                            <i class="mdi mdi-newspaper"></i>
-                            <span> Berita Ditolak </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="terlaris.html">
-                            <i class="mdi mdi-newspaper"></i>
-                            <span> Berita Terlaris </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="dibuat.html">
-                            <i class="mdi mdi-newspaper"></i>
-                            <span> Berita Dibuat </span>
-                        </a>
-                    </li> -->
-                <li>
-                    <a href="{{url('aturan penulis')}}">
-                        <i class="mdi mdi-message-settings-variant"></i>
-                        <span> Aturan </span>
-                    </a>
                 </li>
             </ul>
 

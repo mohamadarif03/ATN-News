@@ -8,25 +8,7 @@ use Illuminate\Http\Request;
 
 class daftaruserController extends Controller
 {
-    public function index(Request $request)
-    {
-        $data = User::query()
-        ->with('Role')
-        ->where("status", "aktif")
-        ->where('role_id', '!=',1);
-        if( $katakunci = $request->katakunci){
-            $data = $data->where('username', 'LIKE', '%'.$katakunci.'%')->paginate(5);
-        }else{
-            $data = $data->paginate(5);
-        }
-       
-        // $datap = peminjaman::with('nama', 'buku')->orderBy('id', 'desc')->paginate(5);
-        
-        
-        $kontak = Kontak::all();
-       
-        return view('admin.user.index',['data' => $data, 'kontak' => $kontak]);
-    }
+   
     public function delete($id){
         //dd($request->all());
         $data = User::find($id);

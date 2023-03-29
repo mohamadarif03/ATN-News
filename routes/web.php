@@ -98,16 +98,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/daftar_editor', [adminberitaController::class, 'daftar_editor'])->name('daftar_editor');
         Route::post('/turunjabatan/{id}', [adminberitaController::class, 'turunjabatan'])->name('turunjabatan');
 
-        //aturan
-        Route::get('aturan', [AturanController::class, 'aindex'])->name('aturan');
-
-        Route::get('/tambahaturan', [AturanController::class, 'tambahaturan'])->name('tambahaturan');
-        Route::post('/insertaturan', [AturanController::class, 'insertaturan'])->name('insertaturan');
-
-        Route::get('/tampilaturan/{id}', [AturanController::class, 'tampilaturan'])->name('tampilaturan');
-        Route::post('/updateaturan/{id}', [AturanController::class, 'updateaturan'])->name('updateaturan');
-
-        Route::get('/deleteaturan/{id}', [AturanController::class, 'deleteaturan'])->name('deleteaturan');
+       
 
         //sponsor
         Route::get('sosmed', [sponsorController::class, 'aindex'])->name('sosmed');
@@ -138,7 +129,6 @@ Route::middleware('auth')->group(function () {
 
 
         //daftar user
-        Route::get('user', [daftaruserController::class, 'index'])->name('user');
         Route::get('/delete/{id}', [daftaruserController::class, 'delete'])->name('delete');
         Route::get('daftarbanned', [daftaruserController::class, 'daftarbanned'])->name('daftarbanned');
         Route::post('/banned/{id}', [daftaruserController::class, 'banned'])->name('banned');
@@ -217,11 +207,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/deleteb/{id}', [BeritaController::class, 'deleteb'])->name('deleteb');
 
 
-        // Route::get('berita dibuat', function () {
-        //     return view('penulis.dibuat.index');
-        // });
-        //aturan penulis
-        Route::get('aturan penulis', [aturan_penulisController::class, 'index'])->name('aturan penulis');
+        
 
         Route::get('edit', function () {
             return view('penulis.edit.index');
@@ -249,8 +235,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/fungsitolak/{id}', [tolakController::class, 'fungsitolak'])->name('fungsitolak');
 
 
-        //aturan editor
-        Route::get('aturane', [aturan_editorController::class, 'index'])->name('aturane');
+
 
         //daftar berita editor
         Route::get('daftare', [beritaeditorController::class, 'index'])->name('daftare');

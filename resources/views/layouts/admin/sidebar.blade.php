@@ -24,7 +24,6 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="{{url('user')}}">Daftar Pengguna</a></li>
                         <li><a href="{{url('acc')}}">Terima Pengguna</a></li>
                         <li><a href="{{url('penulis berita')}}">Daftar Penulis</a></li>
                         <li><a href="{{url('daftar_editor')}}">Daftar Editor</a></li>
@@ -55,12 +54,6 @@
                     <a href="{{url('penghargaan')}}">
                         <i class="mdi mdi-seal"></i>
                         <span> Penghargaan </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{url('aturan')}}">
-                        <i class="mdi mdi-message-settings-variant"></i>
-                        <span> Aturan </span>
                     </a>
                 </li>
                 <li>

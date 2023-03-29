@@ -31,12 +31,6 @@
                     <li><a href="{{url('dibuat_editor')}}">Berita Dibuat</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="{{url('aturane')}}">
-                    <i class="mdi mdi-message-settings-variant"></i>
-                    <span> Aturan </span>
-                </a>
-            </li>
            
         </ul>
 

@@ -27,7 +27,7 @@ class sponsorController extends Controller
     public function insertsosmed(Request $request){
         //dd($request->all());
         $data = sosmed::find(1)->update($request->all());
-       return redirect()->back();
+       return redirect()->back()->with('sukses', 'Berhasil Mengedit Data');
     }
 
     public function tampilsosmed($id){

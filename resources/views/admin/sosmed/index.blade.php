@@ -65,6 +65,21 @@
                     </div>
                     <!-- end page title -->
 
+                    @if (Session::has('sukses'))
+                    <div class="alert alert-success mt-4" role="alert" style="margin-right: 250px; margin-left: 250px">
+                    {{Session::get('sukses')}}
+                    </div>
+                    @endif
+                    @if ($errors->any())
+                    <div class="alert alert-danger" style="margin-right: 250px; margin-left: 250px">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                    </div>
+                    @endif
+
                     <div class="card-box">
                                 <form action="/insertsosmed" method="post" enctype="multipart/form-data">
                                     @csrf

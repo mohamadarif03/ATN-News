@@ -183,7 +183,7 @@ Route::middleware('auth')->group(function () {
 
 
     Route::middleware('only_penulis')->group(function () {
-        Route::get('berita terlaris', [beritalarisController::class, 'terlaris'])->name('berita terlaris');
+       
 
         //daftar berita ditolak penulis
         Route::get('berita ditolak', [BeritaController::class, 'tolak'])->name('berita ditolak');

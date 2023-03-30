@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Berita Terlaris | ATN News </title>
+    <title>Berita Terpopuler | ATN News </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Responsive bootstrap 4 admin template" name="description" />
     <meta content="Coderthemes" name="author" />
@@ -49,10 +49,10 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">ATN News</a></li>
-                                        <li class="breadcrumb-item active">Berita Terlaris</li>
+                                        <li class="breadcrumb-item active">Berita Terpopuler</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Berita Terlaris</h4>
+                                <h4 class="page-title">Berita Terpopuler</h4>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         <div class="col-xl-12">
                             <div class="card-box">
 
-                                {{-- <h4 class="header-title mb-3">Berita Terlaris</h4> --}}
+                                {{-- <h4 class="header-title mb-3">Berita Terpopuler</h4> --}}
 
                                 <div class="pb-3">
                                     <form class="d-flex" action="{{url('berita laris')}}" method="get">

@@ -23,4 +23,8 @@ class berita extends Model
     {
         return $this->hasMany(tag::class, 'berita_id', 'id');
     }
+    public function keywoards()
+    {
+        return $this->hasMany(keywoard::class, 'berita_id', 'id');
+    }
 }

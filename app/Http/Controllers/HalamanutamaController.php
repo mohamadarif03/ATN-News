@@ -33,10 +33,14 @@ class HalamanutamaController extends Controller
         $sosmed = sosmed::limit(1)->orderBy('updated_at', 'desc')->get();
         $penghargaan = penghargaan::limit(3)->orderBy('created_at', 'desc')->get();
 
-        // if (Route::has('login')) {
-        //     $notif = Komentar::where('user_id', Auth::user()->id)
-        //     ->where('parent', '!=', 0)->get();
-        // }
+       if (Auth::check()) {
+        
+           $notif = Komentar::where('user_id', Auth::user()->id)
+           ->where('parent','!=', 0)->get();
+        }
+        $notif = [];
+        
+        
 
         return view('category.beranda.index', ['berita' => $berita, 
         'berita1' => $berita1, 
@@ -53,7 +57,7 @@ class HalamanutamaController extends Controller
         'penghargaan' => $penghargaan,
         'iklan1' => $iklan1,
         'sosmed' => $sosmed,
-        // 'notif' => $notif,
+        'notif' => $notif,
     ]);
     }
     public function isi($id){
@@ -63,7 +67,12 @@ class HalamanutamaController extends Controller
         $kategori2 = Kategori::limit(10)->orderBy('created_at', 'desc')->skip(5)->get();
         $beritalaris = berita::where('status', 'diterima')->limit(5)->orderBy('view', 'desc')->get();
         
-
+        if (Auth::check()) {
+        
+            $notif = Komentar::where('user_id', Auth::user()->id)
+            ->where('parent','!=', 0)->get();
+         }
+         $notif = [];
         $penghargaan = penghargaan::limit(3)->get();
 
 
@@ -97,6 +106,7 @@ class HalamanutamaController extends Controller
         'tag' => $tag,
         'tagstring' => $tagstring,
         'sosmed' => $sosmed,
+        'notif' => $notif,
     ]);
 
        

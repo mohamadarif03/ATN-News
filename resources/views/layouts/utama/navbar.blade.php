@@ -109,15 +109,15 @@
                                 class="block-wrap block-small block-list block-list-small-2 short-pagination rb-columns rb-col-1 p-middle">
                                 <div class="block-inner">
                                     <div class="p-wrap p-small p-list-small-2" data-pid="1599">
-                                       {{-- @foreach ($notif as $row) --}}
+                                       @foreach ($notif as $row)
                                            
                                         <div class="p-content">
                                             <h5 class="entry-title"> <a class="p-url"
                                                     href="best-fujifilm-cameras-for-every-photographer/index.html"
-                                                    rel="bookmark">Membalas Komentar Anda </a></h5>
+                                                    rel="bookmark">{{$row->nama}} Membalas Komentar Anda '{{$row->komentar}}'</a></h5>
                                            
                                         </div>
-                                       {{-- @endforeach --}}
+                                       @endforeach
 
                                     </div>
                                     

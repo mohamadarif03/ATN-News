@@ -65,71 +65,37 @@
                     </div>
                     <!-- end page title -->
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card-box">
-                                <div class="pb-3">
-                                    <a href='/tambahsosmed' class="btn btn-primary">+ Tambah Data</a>
-                                </div>
-                                <div class="pb-3">
-                                <form class="d-flex" action="{{url('sosmed')}}" method="get">
-                                    <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
-                                    <button class="btn btn-secondary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                    </svg></button>
-                                </form>
-                              </div> 
-                                <div class="panel-body">
-                                    <div class="row mt-4">
-                                        <div class="col-12">
-                                            <div class="table-responsive">
-                                                <table class="table table-nowrap">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>Whatsapp</th>
-                                                            <th>Email</th>
-                                                            <th>Instagram</th>
-                                                            <th>Aksi</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php $i = $data->firstItem() ?>
-                                                        @foreach ($data as $row)
-                                                            <tr>
-                                                                <th scope="row">{{ $i }}</th>
-                                                                <td>{{ $row->wa }}</td>
-                                                                <td>{{ $row->ig }}</td>
-                                                                <td>{{ $row->email }}</td>
-                                                              
-                                                                <td>
-                                                                    <a href="/tampilsosmed/{{ $row->id }}"
-                                                                        class="btn btn-info" style="color: white;"><i class="mdi mdi-pencil"></i></a>
-                                                                    <a href="/deletesosmed/{{ $row->id }}"
-                                                                        class="btn btn-dark" style="color: white;"><i class="mdi mdi-delete"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <?php $i++ ?>
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                                {{$data->links()}}
+                    <div class="card-box">
+                                <form action="/insertsosmed" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="my-3 p-3 bg-body rounded shadow-sm">
+                                        <div class="mb-3 row" >
+                                            
+                                            <div class="col-sm-12">
+                                                <div class="mb-3" style="color:black">
+                                                    <!-- <input type="longtext" class="form-control" name='isi'> -->
+                                                    <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Whatsapp</label>
+                                                    <input type="text" name="wa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->wa}}">
+                                                </div>
+                                                    <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Instagram</label>
+                                                    <input type="text" name="ig" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->ig}}">
+                                                </div>
+                                                    <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                                                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->email}}">
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                    <hr>
-                                    
-                                </div>
-                            </div>
+                                        <div class="mb-3 row">
+                                            <!-- <label for="simpan" class="col-sm-2 col-form-label"></label> -->
+                                            <div class="col-sm-10" ><button type="submit"class="btn btn-primary" >SIMPAN</button></div>
+                                        </div>
 
-                        </div>
-
-                    </div>
-
-                </div> <!-- end container-fluid -->
-
-            </div> <!-- end content -->
+                                </form>
+                            </div> <!-- end content -->
 
 
 

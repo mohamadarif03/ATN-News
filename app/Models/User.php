@@ -72,4 +72,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(berita::class, 'editor')->where('status', 'ditolak');
     }
+
+    public function notifikasi()
+    {
+        return $this->hasMany(notifikasi::class);
+    }
 }

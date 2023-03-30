@@ -18,18 +18,7 @@
     <style media="all">
         @charset "UTF-8";
 
-        /* .parentDiv {
-  border: 1px solid black;
-  padding: 10px;
-  width: 80px;
-  margin: 5px;
-  display: relative;
-}
-.childDiv {
-  border: 1px solid blue;
-  height: 50px;
-  margin: 10px;
-} */
+      
 
         .wp-block-archives-dropdown label {
             display: block;

@@ -103,11 +103,12 @@ class AuthController extends Controller
         // Session::flash('email', $request->password);
         
        $request->validate([
-            'username' => 'required',
+            'username' => 'required|regex:/^[a-zA-Z]+$/',
             'email' => 'required|unique:users|max:255',
             'password' => 'required_with:pass|same:pass',
             'cv' => 'required|mimes:pdf|file|max:5000',
         ],[
+            'username.regex' => 'Username Hanya Boleh Berupa Karakter',
             'password.same' => 'Konfirmasi Password Tidak Sesuai',
             'email.unique' => 'Email Sudah Ada Di Database',
             'cv.mimes' => 'CV Harus Berformat PDF',

@@ -21,7 +21,7 @@ class forgotController extends Controller
             $request->only('email')
         );
         return $status === Password::RESET_LINK_SENT
-        ?back()->with(['status' => 'Berhasil Mengirimkan Pesan, Silahkan Cek Email Anda'])
+        ?back()->with(['status' => 'Berhasil Mengirimkan Veifikasi Untuk Reset Sandi, Silahkan Cek Email Anda'])
         : back()->withErrors(['error' =>'Akun Anda Belum Terdaftar']);
     }
     public function resetpass($token)

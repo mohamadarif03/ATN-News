@@ -20,10 +20,10 @@ class HalamanutamaController extends Controller
         $berita1 = berita::where('status', 'diterima')->limit(1)->orderBy('view', 'desc')->skip(2)->get();
         $berita2 = berita::where('status', 'diterima')->limit(2)->orderBy('view', 'desc')->skip(4)->get();
         $berita3 = berita::where('status', 'diterima')->limit(4)->orderBy('view', 'desc')->skip(6)->get();
-        $berita4 = berita::where('status', 'diterima')->limit(1)->orderBy('updated_at', 'desc')->get();
-        $berita5 = berita::where('status', 'diterima')->limit(3)->orderBy('updated_at', 'desc')->skip(1)->get();
-        $berita6 = berita::where('status', 'diterima')->limit(1)->orderBy('updated_at', 'desc')->skip(4)->get();
-        $berita7 = berita::where('status', 'diterima')->limit(3)->orderBy('updated_at', 'desc')->skip(5)->get();
+        $berita4 = berita::where('status', 'diterima')->limit(1)->orderBy('created_at', 'desc')->get();
+        $berita5 = berita::where('status', 'diterima')->limit(3)->orderBy('created_at', 'desc')->skip(1)->get();
+        $berita6 = berita::where('status', 'diterima')->limit(1)->orderBy('created_at', 'desc')->skip(4)->get();
+        $berita7 = berita::where('status', 'diterima')->limit(3)->orderBy('created_at', 'desc')->skip(5)->get();
 
         $navbar1 = berita::where('status', 'diterima')->where('kategori_id', 1)->limit(5)->orderBy('view', 'desc')->get();
         // $navbar2 = berita::where('status', 'diterima')->where('kategori_id', 3)->limit(5)->orderBy('view', 'desc')->get();
@@ -61,7 +61,7 @@ class HalamanutamaController extends Controller
     }
     public function isi($id){
 
-        $berita = berita::where('status', 'diterima')->limit(5)->orderBy('updated_at', 'desc')->get();
+        $berita = berita::where('status', 'diterima')->limit(5)->orderBy('created_at', 'desc')->get();
         $kategori = Kategori::limit(5)->orderBy('created_at', 'desc')->get();
         $kategori2 = Kategori::limit(10)->orderBy('created_at', 'desc')->skip(5)->get();
         $beritalaris = berita::where('status', 'diterima')->limit(5)->orderBy('view', 'desc')->get();

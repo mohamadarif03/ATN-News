@@ -90,6 +90,11 @@
                 Kami</span>
         </a>
     </div>
+
+    @if (Route::has('login'))
+
+    @auth
+        @if (Auth::user()->role_id == 4)
     <div class="wnav-holder header-dropdown-outer"> <a href="#" class="dropdown-trigger notification-icon"
             data-notification="1819"> <span class="notification-icon-inner" data-title="Notifkasi"> <span
                     class="notification-icon-svg"></span> <span class="notification-info"></span> </span> </a>
@@ -104,13 +109,16 @@
                                 class="block-wrap block-small block-list block-list-small-2 short-pagination rb-columns rb-col-1 p-middle">
                                 <div class="block-inner">
                                     <div class="p-wrap p-small p-list-small-2" data-pid="1599">
-                                       
+                                       {{-- @foreach ($notif as $row) --}}
+                                           
                                         <div class="p-content">
                                             <h5 class="entry-title"> <a class="p-url"
                                                     href="best-fujifilm-cameras-for-every-photographer/index.html"
-                                                    rel="bookmark">Reno Gaming Membalas Komentar Anda</a></h5>
+                                                    rel="bookmark">Membalas Komentar Anda </a></h5>
                                            
                                         </div>
+                                       {{-- @endforeach --}}
+
                                     </div>
                                     
                                 </div>
@@ -122,3 +130,7 @@
             </div>
         </div>
     </div>
+    @endif
+    @endauth
+
+    @endif

@@ -91,15 +91,15 @@
                                                     <!-- <input type="longtext" class="form-control" name='isi'> -->
                                                     <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Whatsapp</label>
-                                                    <input type="text" name="wa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->wa}}">
+                                                    <input type="text" name="wa" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="{{$data->wa}}">
                                                 </div>
                                                     <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Instagram</label>
-                                                    <input type="text" name="ig" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->ig}}">
+                                                    <input type="text" name="ig" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="{{$data->ig}}">
                                                 </div>
                                                     <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Email</label>
-                                                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data->email}}">
+                                                    <input type="text" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required value="{{$data->email}}">
                                                 </div>
                                                 </div>
                                             </div>

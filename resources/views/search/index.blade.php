@@ -25432,12 +25432,32 @@
                                             src="{{asset('logoatn.png')}}
                                                 " alt="Technology" /> </a></div>
                                    @include('layouts.utama.navbar')
-                                    
+                                   <div class="wnav-holder w-header-search header-dropdown-outer">
+                                        <a href="#" data-title="Search"
+                                            class="icon-holder header-element search-btn search-trigger">
+                                            <span class="search-icon-svg"></span>
+                                        </a>
+                                        <div class="header-dropdown">
+                                            <div class="header-search-form live-search-form">
+                                               
+                                                <form action="{{url('search')}}" method="get" class="rb-search-form" style="display: flex">
+                                                    <input class="form-control me-1" type="search" style="color: white" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
+                                                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: black" viewBox="0 0 16 16">
+                                                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                    </svg></button>
+                                                </form>
+                                                <span class="live-search-animation rb-loader"></span>
+                                                <div class="live-search-response"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                              
                             </div>
                         </div>
                     </div>
+                    @include('layouts.utama.navhp')
+
                     <div id="header-mobile" class="header-mobile">
                         <div class="header-mobile-wrap">
                             <div class="mbnav edge-padding">

@@ -15,7 +15,7 @@ class searchController extends Controller
         $katakunci = $request->katakunci;
         $search = berita::where('status', 'diterima')
         ->where('judul', 'LIKE', '%'.$katakunci.'%')
-        ->paginate(8);
+        ->paginate(8)->withQueryString();
         $penghargaan = penghargaan::limit(3)->orderBy('created_at', 'desc')->get();
         $kategori = Kategori::limit(5)->orderBy('created_at', 'desc')->get();
         $kategori2 = Kategori::limit(10)->orderBy('created_at', 'desc')->skip(5)->get();

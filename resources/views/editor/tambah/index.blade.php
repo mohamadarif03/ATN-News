@@ -143,18 +143,6 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        {{-- <div class="mb-3 row" style="margin-left: 156px">
-                                            <label for="privasi">
-                                            <input type="checkbox" name="privasi" id="termsChec">
-                                                Pilih Kategori Lainnya...
-                                            </label>                        
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label for="foto" class="col-sm-2 col-form-label">Kategori Lainnya...</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" name='foto'>
-                                            </div>
-                                        </div> --}}
                                         <div class="mb-3 row">
                                             <label for="kategori_id" class="col-sm-2 col-form-label">Tag</label>
                                             <div class="col-sm-10">
@@ -162,6 +150,14 @@
                                                 
                                             </div>
                                         </div>
+                                        {{-- <div class="mb-3 row">
+                                            <label for="kategori_id" class="col-sm-2 col-form-label">Kata Kunci</label>
+                                            <div class="col-sm-10">
+                                                <input id="input-tags" value="{{old('keywoard')}}" autocomplete="off" name="keywoard" id="keywoard" placeholder="Tambahkan Keywoard">
+                                                
+                                            </div>
+                                        </div> --}}
+                                       
                                         <div class="mb-3 row">
                                             <label for="privasi">
                                             <input type="checkbox" name="privasi" id="termsCheck">

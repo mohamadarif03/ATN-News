@@ -30341,7 +30341,7 @@
                                                 <h3 class="heading-title"><span>Berita Lanjutan</span></h3>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>judul
                                 </div>
                                 <div class="elementor-element elementor-element-7a4c608 elementor-widget elementor-widget-foxiz-overlay-1"
                                 data-id="7a4c608" data-element_type="widget"
@@ -30356,7 +30356,7 @@
                                                 <div class="overlay-holder">
                                                     <div class="p-featured"> <a class="p-flink"
                                                             href="/isi_berita/{{ $row->id }}"
-                                                            title="Top Tech Trends: Great Gadgets to Help You"> <img
+                                                            title="{{$row->judul}}"> <img
                                                                 width="860" height="573"
                                                                 src="{{asset('foto/'. $row->foto)}}"
                                                                 class="featured-img wp-post-image" alt=""
@@ -30450,7 +30450,7 @@
                                                     <div class="overlay-holder">
                                                         <div class="p-featured"> <a class="p-flink"
                                                                 href="/isi_berita/{{ $row->id }}"
-                                                                title="Top Tech Trends: Great Gadgets to Help You"> <img
+                                                                title="{{$row->judul}}"> <img
                                                                     width="860" height="573"
                                                                     src="{{asset('foto/'. $row->foto)}}"
                                                                     class="featured-img wp-post-image" alt=""

@@ -28526,13 +28526,20 @@ class="more-section-outer menu-has-child-flex menu-has-child-mega-columns layout
                                                             aria-invalid="false" placeholder="Isi Pesan"></textarea>
                                                     </span> 
                                                     @if (Route::has('login'))
-                                                    @auth 
+                                                    @auth
+                                                    @if (Auth::user()->role_id == 1)
+                                                    <a href="kontak" style="margin-left:1%;" class="is-btn header-element">
+                                                        <span>Admin Tidak Dapat Mengirim Pesan Melalui Hubungi Kami</span>
+                                                      </a>
+                                                    @else
                                                     <input type="submit" value="Kirim"
                                                         class="wpcf7-form-control has-spinner wpcf7-submit" />
-                                                        @else <a href="register_komentar" style="margin-left:1%;" class="is-btn header-element">
+                                                    @endif
+                                                    
+                                                    @else <a href="register_komentar" style="margin-left:1%;" class="is-btn header-element">
                                                             <span>Kirim</span>
                                                           </a> @endauth
-                                                           @endif 
+                                                    @endif 
                                                     <div class="wpcf7-response-output" aria-hidden="true"></div>
                                                 </form>
                                             </div>

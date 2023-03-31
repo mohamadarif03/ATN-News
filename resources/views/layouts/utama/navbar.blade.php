@@ -108,8 +108,8 @@
                             <div id="uid_notification"
                                 class="block-wrap block-small block-list block-list-small-2 short-pagination rb-columns rb-col-1 p-middle">
                                 <div class="block-inner">
+                                    @foreach ($notif as $row)
                                     <div class="p-wrap p-small p-list-small-2" data-pid="1599">
-                                       @foreach ($notif as $row)
                                            
                                         <div class="p-content">
                                             <h5 class="entry-title"> <a class="p-url"
@@ -117,9 +117,9 @@
                                                     rel="bookmark">{{$row->nama}} Membalas Komentar Anda '{{$row->komentar}}'</a></h5>
                                            
                                         </div>
-                                       @endforeach
-
+                                        
                                     </div>
+                                    @endforeach
                                     
                                 </div>
                                 

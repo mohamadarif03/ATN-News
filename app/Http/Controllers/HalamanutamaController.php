@@ -37,8 +37,11 @@ class HalamanutamaController extends Controller
         
            $notif = Komentar::where('user_id', Auth::user()->id)
            ->where('parent','!=', 0)->get();
+
+        //    dd($notif);
+        }else {
+            $notif = [];
         }
-        $notif = [];
         
         
 
@@ -71,8 +74,11 @@ class HalamanutamaController extends Controller
         
             $notif = Komentar::where('user_id', Auth::user()->id)
             ->where('parent','!=', 0)->get();
+ 
+         //    dd($notif);
+         }else {
+             $notif = [];
          }
-         $notif = [];
         $penghargaan = penghargaan::limit(3)->get();
 
 

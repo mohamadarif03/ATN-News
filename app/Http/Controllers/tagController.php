@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\berita;
 use App\Models\Kategori;
+use App\Models\Komentar;
 use App\Models\Penghargaan;
 use App\Models\sosmed;
 use App\Models\tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class tagController extends Controller
 {
@@ -19,6 +21,15 @@ class tagController extends Controller
         $beritaid = $tag->pluck('berita_id')->toArray();
         $berita = berita::whereIn('id', $beritaid)->where('status', 'diterima')->paginate(8)->withQueryString();
 
+        if (Auth::check()) {
+        
+            $notif = Komentar::where('user_id', Auth::user()->id)
+            ->where('parent','!=', 0)->get();
+ 
+         //    dd($notif);
+         }else {
+             $notif = [];
+         }
        
     
         $penghargaan = Penghargaan::limit(3)->orderBy('created_at', 'desc')->get();
@@ -35,6 +46,7 @@ class tagController extends Controller
         'kategori2' => $kategori2,
         'sosmed' => $sosmed,
         'berita' => $berita,
+        'notif' => $notif,
         ]);
         // return view('tag.index');
     }

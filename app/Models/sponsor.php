@@ -9,5 +9,5 @@ class sponsor extends Model
 {
     use HasFactory;
     protected $table = 'sponsor';
-    protected $fillable = ['sponsor', 'foto'];
+    protected $guarded = [];
 }

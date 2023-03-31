@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\berita;
 use App\Models\Kategori;
+use App\Models\keywoard;
 use App\Models\tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -86,7 +87,16 @@ class beritaeditorController extends Controller
             }
             $tagstring = $tagstring.$item->tag;
         }
-        return view('editor.edite.index', compact('data','ber', 'berita', 'tagstring'));
+        $keywoard = keywoard::where('berita_id', $data->id)->get();
+        // $keywoard = keywoard::where('id_berita',$id)-get();
+        $keywoardstring = '';
+        foreach($keywoard as $itemk){
+            if($keywoardstring != ''){
+                $keywoardstring = $keywoardstring.',';
+            }
+            $keywoardstring = $keywoardstring.$itemk->keywoard;
+        }
+        return view('editor.edite.index', compact('data','ber', 'berita', 'tagstring','keywoardstring'));
     }
     public function updatee(Request $request, $id)
     {
@@ -133,6 +143,11 @@ class beritaeditorController extends Controller
             foreach ($tags as $tag) {
                 $tag->delete();
             }
+        if ($request->keywoard) {
+            $keywoards = keywoard::where('berita_id', $data->id)->get();
+            foreach ($keywoards as $keywoard) {
+                $keywoard->delete();
+            }
     
             $coba = $request->tag;
             $test = explode(',', $coba);
@@ -142,10 +157,19 @@ class beritaeditorController extends Controller
                     'berita_id' => $data->id,
                 ]);
             }
+            $tes = $request->keywoard;
+            $oke = (explode(",",$tes));
+            foreach($oke as $row){
+                keywoard::create([
+                    'keywoard' => $row,
+                    'berita_id' => $data->id,   
+        ]);
+        }
         }
         
         return redirect()->route('daftare')->with('success', 'Berhasil Diperbarui');
     }
+}
 
     public function terimaberita($id){
         $data = berita::find($id);

@@ -45,7 +45,8 @@ class HalamanutamaController extends Controller
         
         
 
-        return view('category.beranda.index', ['berita' => $berita, 
+        return view('category.beranda.index', [
+        'berita' => $berita, 
         'berita1' => $berita1, 
         'berita2' => $berita2, 
         'berita3' => $berita3, 
@@ -58,6 +59,7 @@ class HalamanutamaController extends Controller
         'kategori2' => $kategori2,
         'iklan' => $iklan,
         'penghargaan' => $penghargaan,
+        'penghargaan1' => $penghargaan,
         'iklan1' => $iklan1,
         'sosmed' => $sosmed,
         'notif' => $notif,
@@ -79,7 +81,7 @@ class HalamanutamaController extends Controller
          }else {
              $notif = [];
          }
-        $penghargaan = penghargaan::limit(3)->get();
+        $penghargaan = penghargaan::all();
 
 
         

@@ -81,10 +81,22 @@
                                     <input type="text" name="sponsor" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->sponsor}}">
                                   </div>
                                   <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Foto</label>
-                                    <br><img src="{{ asset('fotoiklan/'.$data->foto)}}" alt="" style="width: 120px;float: left;margin-bottom: 5px;"></br>
-                                    <input type="file" name="foto" class="form-control" value="{{ $data->foto}}">
+                                    <label for="exampleInputEmail1" class="form-label">Deskripsi</label>
+                                    <input type="text" name="deskripsi" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->deskripsi}}">
                                   </div>
+                                  <div class="mb-3">
+                                      <label for="exampleInputEmail1" class="form-label">Foto</label>
+                                      <br><img src="{{ asset('fotoiklan/'.$data->foto)}}" alt="" style="width: 120px;float: left;margin-bottom: 5px;"></br>
+                                      <input type="file" name="foto" class="form-control" value="{{ $data->foto}}">
+                                    </div>
+                                    <div class="mb-3">
+                                      <label for="exampleInputEmail1" class="form-label">Iklan Dimulai</label>
+                                      <input type="date" name="mulai" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->mulai}}">
+                                    </div>
+                                    <div class="mb-3">
+                                      <label for="exampleInputEmail1" class="form-label">Iklan Berakhir</label>
+                                      <input type="date" name="akhir" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->akhir}}">
+                                    </div>
                                   <button type="submit" class="btn btn-primary">Edit</button>
                                 </form>
                       

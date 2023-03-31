@@ -18,14 +18,14 @@ class HalamanutamaController extends Controller
     public function index()
     {
         $user = User::where('status', 'aktif')->get();
-        $berita = berita::where('status', 'diterima')->limit(2)->orderBy('view', 'desc')->get();
-        $berita1 = berita::where('status', 'diterima')->limit(1)->orderBy('view', 'desc')->skip(2)->get();
-        $berita2 = berita::where('status', 'diterima')->limit(2)->orderBy('view', 'desc')->skip(4)->get();
-        $berita3 = berita::where('status', 'diterima')->limit(4)->orderBy('view', 'desc')->skip(6)->get();
-        $berita4 = berita::where('status', 'diterima')->limit(1)->orderBy('created_at', 'desc')->get();
-        $berita5 = berita::where('status', 'diterima')->limit(3)->orderBy('created_at', 'desc')->skip(1)->get();
-        $berita6 = berita::where('status', 'diterima')->limit(1)->orderBy('created_at', 'desc')->skip(4)->get();
-        $berita7 = berita::where('status', 'diterima')->limit(3)->orderBy('created_at', 'desc')->skip(5)->get();
+        $berita = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(2)->orderBy('view', 'desc')->get();
+        $berita1 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(1)->orderBy('view', 'desc')->skip(2)->get();
+        $berita2 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(2)->orderBy('view', 'desc')->skip(4)->get();
+        $berita3 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(4)->orderBy('view', 'desc')->skip(6)->get();
+        $berita4 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(1)->orderBy('created_at', 'desc')->get();
+        $berita5 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(3)->orderBy('created_at', 'desc')->skip(1)->get();
+        $berita6 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(1)->orderBy('created_at', 'desc')->skip(4)->get();
+        $berita7 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(3)->orderBy('created_at', 'desc')->skip(5)->get();
 
         $navbar1 = berita::where('status', 'diterima')->where('kategori_id', 1)->limit(5)->orderBy('view', 'desc')->get();
         // $navbar2 = berita::where('status', 'diterima')->where('kategori_id', 3)->limit(5)->orderBy('view', 'desc')->get();
@@ -39,6 +39,16 @@ class HalamanutamaController extends Controller
 
         $sosmed = sosmed::limit(1)->orderBy('updated_at', 'desc')->get();
         $penghargaan = penghargaan::limit(3)->orderBy('created_at', 'desc')->get();
+
+        if (Auth::check()) {
+        
+            $notif = Komentar::where('user_id', Auth::user()->id)
+            ->where('parent','!=', 0)->get();
+ 
+         //    dd($notif);
+         }else {
+             $notif = [];
+        }
 
         return view('category.beranda.index', ['berita' => $berita, 
         'berita1' => $berita1, 
@@ -56,6 +66,7 @@ class HalamanutamaController extends Controller
         'iklan1' => $iklan1,
         'sosmed' => $sosmed,
         'user' => $user,
+        'notif' => $notif,
         // 'navbar2' => $navbar2,
         // 'navbar3' => $navbar3,
         // 'navbar4' => $navbar4,
@@ -64,10 +75,10 @@ class HalamanutamaController extends Controller
     }
     public function isi($id){
         
-        $berita = berita::where('status', 'diterima')->limit(5)->orderBy('created_at', 'desc')->get();
+        $berita = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(5)->orderBy('created_at', 'desc')->get();
         $kategori = Kategori::limit(5)->orderBy('created_at', 'desc')->get();
         $kategori2 = Kategori::limit(10)->orderBy('created_at', 'desc')->skip(5)->get();
-        $beritalaris = berita::where('status', 'diterima')->limit(5)->orderBy('view', 'desc')->get();
+        $beritalaris = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(5)->orderBy('view', 'desc')->get();
         
 
         $penghargaan = penghargaan::limit(3)->get();

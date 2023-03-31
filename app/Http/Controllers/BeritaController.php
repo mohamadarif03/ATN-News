@@ -224,7 +224,7 @@ class BeritaController extends Controller
         
         $katakunci = $request->katakunci;
         $data = berita::where('status', 'diterima')
-        ->orderBy('created_at', 'desc')->where('judul', 'LIKE', '%'.$katakunci.'%')->paginate(3);
+        ->orderBy('created_at', 'desc')->where('judul', 'LIKE', '%'.$katakunci.'%')->where('statususer', 'aman')->paginate(3)->withQueryString();
         // $data = compact('kat');
         $kontak = Kontak::all();
         return view('admin.berita dibuat.index',[

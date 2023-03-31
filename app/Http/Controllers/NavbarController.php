@@ -15,17 +15,17 @@ class NavbarController extends Controller
     {
         $data = Kategori::find($id);
         $kategori = Kategori::limit(5)->orderBy('created_at', 'desc')->get();
-        $beritateratas = berita::where('status', 'diterima')->limit(2)->where('kategori_id', $id)->orderBy('view', 'desc')->get();
-        $beritateratas1 = berita::where('status', 'diterima')->limit(1)->skip(2)->where('kategori_id', $id)->orderBy('view', 'desc')->get();
-        $beritateratas2 = berita::where('status', 'diterima')->limit(2)->skip(3)->where('kategori_id', $id)->orderBy('view', 'desc')->get();
-        $berita = berita::where('status', 'diterima')->where('kategori_id', $id)->limit(5)->orderBy('created_at', 'desc')->get();
+        $beritateratas = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(2)->where('kategori_id', $id)->orderBy('view', 'desc')->get();
+        $beritateratas1 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(1)->skip(2)->where('kategori_id', $id)->orderBy('view', 'desc')->get();
+        $beritateratas2 = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(2)->skip(3)->where('kategori_id', $id)->orderBy('view', 'desc')->get();
+        $berita = berita::where('status', 'diterima')->where('statususer', 'aman')->where('kategori_id', $id)->limit(5)->orderBy('created_at', 'desc')->get();
         $kategori1 = Kategori::limit(5)->orderBy('created_at', 'desc')->get();
         $kategori2 = Kategori::limit(10)->orderBy('created_at', 'desc')->skip(5)->get();
-        $berita3 = berita::where('kategori_id', $id)->limit(8)->where('status', 'diterima')->orderBy('updated_at', 'desc')->get();
-        $navbar1 = berita::where('status', 'diterima')->where('kategori_id', $id)->limit(5)->orderBy('view', 'desc')->get();
+        $berita3 = berita::where('kategori_id', $id)->limit(8)->where('status', 'diterima')->where('statususer', 'aman')->orderBy('updated_at', 'desc')->get();
+        $navbar1 = berita::where('status', 'diterima')->where('kategori_id', $id)->where('statususer', 'aman')->limit(5)->orderBy('view', 'desc')->get();
         $iklan = sponsor::limit(1)->orderBy('created_at', 'desc')->get();
         $iklan1 = sponsor::limit(1)->skip(1)->orderBy('created_at', 'desc')->get();
-        $beritalaris = berita::where('status', 'diterima')->limit(5)->orderBy('view', 'desc')->get();
+        $beritalaris = berita::where('status', 'diterima')->where('statususer', 'aman')->limit(5)->orderBy('view', 'desc')->get();
         $penghargaan = penghargaan::limit(3)->orderBy('created_at', 'desc')->get();
         $sosmed = sosmed::limit(1)->orderBy('updated_at', 'desc')->get();
 

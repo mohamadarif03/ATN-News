@@ -15,7 +15,7 @@ class beritalarisController extends Controller
         $katakunci = $request->katakunci;
         $kontak = Kontak::all();
         $user = User::all();
-        $berita = berita::where('judul', 'LIKE', '%'.$katakunci.'%')->where('status', 'diterima')->with('users')->orderBy('view', 'desc')->paginate(5);
+        $berita = berita::where('judul', 'LIKE', '%'.$katakunci.'%')->where('status', 'diterima')->where('statususer', 'aman')->with('users')->orderBy('view', 'desc')->paginate(5)->withQueryString();
         return view('admin.berita terlaris.index', ['kontak' => $kontak, 'berita' => $berita, 'user' => $user]);
     }
   

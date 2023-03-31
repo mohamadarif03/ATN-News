@@ -29,7 +29,7 @@ class daftaruserController extends Controller
         ]);
         $berita = berita::where('penulis', $id);
         $berita->update([
-            'status' => 'banned',
+            'statususer' => 'banned',
         ]);
 
        
@@ -60,7 +60,7 @@ class daftaruserController extends Controller
         ]);
         $berita = berita::where('penulis', $id);
         $berita->update([
-            'status' => 'diterima',
+            'statususer' => 'aman',
         ]);
 
         

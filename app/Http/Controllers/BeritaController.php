@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\berita;
 use App\Models\kategori;
+use App\Models\keywoard;
 use App\Models\Kontak;
 use App\Models\tag;
 use Illuminate\Http\Request;
@@ -51,7 +52,7 @@ class BeritaController extends Controller
             'isi' => 'required',
             'foto' => 'required|dimensions:min_width=1000,min_height=600',
             'tag' => 'required',
-            'kaywoard' => 'required',
+            
             // 'kategori_id' => 'required',
         ],[
             'judul.required' => 'Judul Wajib Diisi',
@@ -61,7 +62,7 @@ class BeritaController extends Controller
             'foto.required' => 'Foto Wajib Diisi',
             'foto.dimensions' => 'Sesuaikan Ukuran Foto',
             'tag.required' => 'Tag Wajib Diisi',
-            'keywoard.required' => 'Kata Kunci Wajib Diisi',
+            
         ]);
 
         $storage = 'berita';
@@ -116,15 +117,7 @@ class BeritaController extends Controller
         ]);
         }
 
-       $test = $request->keywoard;
-      
-       $test = (explode(",",$test));
-       foreach($test as $row){
-        tag::create([
-            'keywoard' => $row,
-            'berita_id' => $data->id,   
-        ]);
-        }
+       
         
         return redirect()->route('indexb')->with('success', 'Berhasil Inputkan');
     }
@@ -202,10 +195,18 @@ class BeritaController extends Controller
             'berita_id' => $data->id,   
 
         ]);
-}
-        // dd($test);
-        // $ok = (implode(', ', $test));
-        // dd($ok);
+        }
+
+        $test = $request->keywoard;
+      
+       $oke = (explode(",",$test));
+       foreach($oke as $row){
+        keywoard::create([
+            'keywoard' => $row,
+            'berita_id' => $data->id,   
+        ]);
+        }
+        
         return redirect()->route('dibuat_editor')->with('success', 'Berhasil Inputkan');
     }
 

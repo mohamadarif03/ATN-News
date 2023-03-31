@@ -96,7 +96,7 @@
                                             <div class="col-sm-12">
                                                 <div class="mb-3" style="color:black">
                                                     <!-- <input type="longtext" class="form-control" name='isi'> -->
-                                                    <textarea id="summernote" name="isi">{{$data->isi}}
+                                                    <textarea id="summernote" name="isi" required>{{$data->isi}}
                                                     </textarea>
                                                 </div>
                                             </div>

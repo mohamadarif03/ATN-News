@@ -9,8 +9,9 @@ class keywoard extends Model
 {
     use HasFactory;
 
-    protected $table = 'tag';
-    protected $fillable = ['tag', 'berita_id'];
+    protected $table = 'keywoard';
+    protected $guarded = [];
+
 
     public function berita()
     {

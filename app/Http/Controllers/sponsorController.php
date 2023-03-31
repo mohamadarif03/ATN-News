@@ -17,60 +17,26 @@ class sponsorController extends Controller
         
         $katakunci = $request->katakunci;
         // $Role = Role::all();
-        $data = sosmed::where('wa', 'LIKE', '%'.$katakunci.'%')
-        ->Orwhere('ig', 'LIKE', '%'.$katakunci.'%')
-        ->Orwhere('email', 'LIKE', '%'.$katakunci.'%')
-        ->orderBy('updated_at', 'desc')
-        ->paginate(5);
+        $data = sosmed::find(1);
         $kontak = Kontak::all();
         // $item = Role::all();
        
         return view('admin.sosmed.index',['data' => $data, 'kontak' => $kontak]);
     }
-    public function tambahsosmed(){
-        $kontak = Kontak::all();
-        // $role = Role::whereIn('name', ['penulis', 'editor'])->get();
-        return view('admin.sosmed.tambahsosmed',['kontak'=>$kontak]);
-    }
 
     public function insertsosmed(Request $request){
         //dd($request->all());
-        Session::flash('sosmed', $request->sosmed);
-
-        $request->validate([
-            
-            'wa'=>'required',
-            'ig'=>'required',
-            'email'=>'required',
-        ],[
-            'wa.required'=>'Kolom Whatsapp Wajib Diisi',
-            'ig.required'=>'Kolom Instagram Wajib Diisi',
-            'email.required'=>'Kolom Email Wajib Diisi',
-        ]);
-       $data = sosmed::create($request->all());
-       return redirect()->route('sosmed')->with('sukses','Data Berhasil Di Tambahkan');
+        $data = sosmed::find(1)->update($request->all());
+       return redirect()->back()->with('sukses', 'Berhasil Mengedit Data');
     }
 
     public function tampilsosmed($id){
 
-        $data = sosmed::find($id);
+        $data = sosmed::orderBy('created_at', 'desc')->get();
         // $role = Role::whereIn('name', ['penulis', 'editor'])->get();
         $sosmed = sosmed::all();
         $kontak = Kontak::all();
         return view('admin.sosmed.tampilsosmed', compact('data', 'kontak', 'sosmed'));
     }
-    
-    
-    public function updatesosmed(Request $request, $id){
-        $data = sosmed::find($id);
-        $data->update($request->all());
-        return redirect()->route('sosmed', compact('data'))->with('sukses','Data Berhasil Di Perbarui');
 
-    }
-
-    public function deletesosmed($id){
-        $data = sosmed::find($id);
-        $data->delete();
-        return redirect()->route('sosmed')->with('sukses', 'Data Berhasil Di Hapus' );
-    }
 }

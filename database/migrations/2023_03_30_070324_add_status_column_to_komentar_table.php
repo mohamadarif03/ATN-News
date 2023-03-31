@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('berita', function (Blueprint $table) {
-            $table->string('statususer')->nullable()->after('status');
-            $table->foreign('statususer')->references('status')->on('users')->onUpdate('cascade');
+        Schema::table('komentar', function (Blueprint $table) {
+            $table->string('status')->default('belum dibaca')->after('parent');
+            
         });
     }
 
@@ -26,8 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('berita', function (Blueprint $table) {
-            $table->dropColumn('statususer');
+        Schema::table('komentar', function (Blueprint $table) {
+            $table->dropColumn('status');
         });
     }
 };

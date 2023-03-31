@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="stylesheet" href="{{asset('css/batas.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <style media="all">
         /*! This file is auto-generated */
         .wp-block-button__link {
@@ -29997,615 +29998,325 @@
                                         </a>
                                     </div>
                                     @include('layouts.utama.navbar')
-
-                                    <div class="wnav-holder w-header-search header-dropdown-outer">
-                                        <a href="#" data-title="Search"
-                                            class="icon-holder header-element search-btn search-trigger">
-                                            <span class="search-icon-svg"></span>
-                                        </a>
-                                        <div class="header-dropdown">
-                                            <div class="header-search-form live-search-form">
-                                               
-                                                <form action="{{url('search')}}" method="get" class="rb-search-form" style="display: flex">
-                                                    <input class="form-control me-1" type="search" style="color: white" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
-                                                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: black" viewBox="0 0 16 16">
-                                                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                                    </svg></button>
-                                                </form>
-                                                <span class="live-search-animation rb-loader"></span>
-                                                <div class="live-search-response"></div>
-                                            </div>
+                                   <div class="wnav-holder w-header-search header-dropdown-outer">
+                                    <a href="#" data-title="Search"
+                                        class="icon-holder header-element search-btn search-trigger">
+                                        <span class="search-icon-svg"></span>
+                                    </a>
+                                    <div class="header-dropdown">
+                                        <div class="header-search-form live-search-form">
+                                           
+                                            <form action="{{url('search')}}" method="get" class="rb-search-form" style="display: flex">
+                                                <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
+                                                <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="color: black" viewBox="0 0 16 16">
+                                                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                                </svg></button>
+                                            </form>
+                                            <span class="live-search-animation rb-loader"></span>
+                                            <div class="live-search-response"></div>
                                         </div>
                                     </div>
-                                  
+                                </div>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    @include('layouts.utama.navhp')
+
+                    <div id="header-mobile" class="header-mobile">
+                        <div class="header-mobile-wrap">
+                            <div class="mbnav edge-padding">
+                                <div class="navbar-left">
+                                    <div class="mobile-toggle-wrap"> <a href="#" class="mobile-menu-trigger"
+                                            aria-label="mobile trigger"> <span
+                                                class="burger-icon"><span></span><span></span><span></span></span> </a>
+                                    </div>
+                                    <div class="mobile-logo-wrap is-image-logo site-branding"> <a href="#"
+                                            title="Technology"> <img class="logo-default" data-mode="default" height="60" width="92"
+                                            src="{{asset('logoatn.png')}}
+                                                " alt="Technology" /> </a></div>
+                                </div>
+                                <div class="navbar-right"> <a href="#" class="mobile-menu-trigger mobile-search-icon"
+                                        aria-label="search"><span class="search-icon-svg"></span></a>
+                                    <div class="dark-mode-toggle-wrap">
+                                        <div class="dark-mode-toggle"> <span class="dark-mode-slide"> <i
+                                                    class="dark-mode-slide-btn mode-icon-dark"
+                                                    data-title="Switch to Light"><svg class="svg-icon svg-mode-dark"
+                                                        aria-hidden="true" role="img" focusable="false"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <path fill="currentColor" d="M507.681,209.011c-1.297-6.991-7.324-12.111-14.433-12.262c-7.104-0.122-13.347,4.711-14.936,11.643
+ c-15.26,66.497-73.643,112.94-141.978,112.94c-80.321,0-145.667-65.346-145.667-145.666c0-68.335,46.443-126.718,112.942-141.976
+ c6.93-1.59,11.791-7.826,11.643-14.934c-0.149-7.108-5.269-13.136-12.259-14.434C287.546,1.454,271.735,0,256,0
+ C187.62,0,123.333,26.629,74.98,74.981C26.628,123.333,0,187.62,0,256s26.628,132.667,74.98,181.019
+ C123.333,485.371,187.62,512,256,512s132.667-26.629,181.02-74.981C485.372,388.667,512,324.38,512,256
+ C512,240.278,510.546,224.469,507.681,209.011z" />
+                                                    </svg></i> <i class="dark-mode-slide-btn mode-icon-default"
+                                                    data-title="Switch to Dark"><svg class="svg-icon svg-mode-light"
+                                                        aria-hidden="true" role="img" focusable="false"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 232.447 232.447">
+                                                        <path fill="currentColor" d="M116.211,194.8c-4.143,0-7.5,3.357-7.5,7.5v22.643c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5V202.3
+ C123.711,198.157,120.354,194.8,116.211,194.8z" />
+                                                        <path fill="currentColor" d="M116.211,37.645c4.143,0,7.5-3.357,7.5-7.5V7.505c0-4.143-3.357-7.5-7.5-7.5s-7.5,3.357-7.5,7.5v22.641
+ C108.711,34.288,112.068,37.645,116.211,37.645z" />
+                                                        <path fill="currentColor" d="M50.054,171.78l-16.016,16.008c-2.93,2.929-2.931,7.677-0.003,10.606c1.465,1.466,3.385,2.198,5.305,2.198
+ c1.919,0,3.838-0.731,5.302-2.195l16.016-16.008c2.93-2.929,2.931-7.677,0.003-10.606C57.731,168.852,52.982,168.851,50.054,171.78
+ z" />
+                                                        <path fill="currentColor" d="M177.083,62.852c1.919,0,3.838-0.731,5.302-2.195L198.4,44.649c2.93-2.929,2.931-7.677,0.003-10.606
+ c-2.93-2.932-7.679-2.931-10.607-0.003l-16.016,16.008c-2.93,2.929-2.931,7.677-0.003,10.607
+ C173.243,62.12,175.163,62.852,177.083,62.852z" />
+                                                        <path fill="currentColor" d="M37.645,116.224c0-4.143-3.357-7.5-7.5-7.5H7.5c-4.143,0-7.5,3.357-7.5,7.5s3.357,7.5,7.5,7.5h22.645
+ C34.287,123.724,37.645,120.366,37.645,116.224z" />
+                                                        <path fill="currentColor" d="M224.947,108.724h-22.652c-4.143,0-7.5,3.357-7.5,7.5s3.357,7.5,7.5,7.5h22.652c4.143,0,7.5-3.357,7.5-7.5
+ S229.09,108.724,224.947,108.724z" />
+                                                        <path fill="currentColor" d="M50.052,60.655c1.465,1.465,3.384,2.197,5.304,2.197c1.919,0,3.839-0.732,5.303-2.196c2.93-2.929,2.93-7.678,0.001-10.606
+ L44.652,34.042c-2.93-2.93-7.679-2.929-10.606-0.001c-2.93,2.929-2.93,7.678-0.001,10.606L50.052,60.655z" />
+                                                        <path fill="currentColor"
+                                                            d="M182.395,171.782c-2.93-2.929-7.679-2.93-10.606-0.001c-2.93,2.929-2.93,7.678-0.001,10.607l16.007,16.008
+ c1.465,1.465,3.384,2.197,5.304,2.197c1.919,0,3.839-0.732,5.303-2.196c2.93-2.929,2.93-7.678,0.001-10.607L182.395,171.782z" />
+                                                        <path fill="currentColor" d="M116.22,48.7c-37.232,0-67.523,30.291-67.523,67.523s30.291,67.523,67.523,67.523s67.522-30.291,67.522-67.523
+ S153.452,48.7,116.22,48.7z M116.22,168.747c-28.962,0-52.523-23.561-52.523-52.523S87.258,63.7,116.22,63.7
+ c28.961,0,52.522,23.562,52.522,52.523S145.181,168.747,116.22,168.747z" />
+                                                    </svg></i> </span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobile-qview">
+                                <ul id="menu-mobile-quick-access-1" class="mobile-qview-inner">
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1697">
+                                        <a href="category/tech-news/index.html"><span>Tech News</span></a></li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1698">
+                                        <a href="category/gadget/index.html"><span>Gadget</span></a></li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1699">
+                                        <a href="category/technology/index.html"><span>Technology</span></a></li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1700">
+                                        <a href="category/mobile/index.html"><span>Mobile</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mobile-collapse">
+                            <div class="collapse-holder">
+                                <div class="collapse-inner">
+                                    <div class="mobile-search-form edge-padding">
+                                        <div class="header-search-form is-form-layout"> <span class="h5">Search</span>
+                                            <form method="get" action="https://foxiz.themeruby.com/tech/"
+                                                class="rb-search-form">
+                                                <div class="search-form-inner"> <span class="search-icon"><span
+                                                            class="search-icon-svg"></span></span> <span
+                                                        class="search-text"><input type="text" class="field"
+                                                            placeholder="Search Headlines, News..." value=""
+                                                            name="s" /></span> <span class="rb-search-submit"><input
+                                                            type="submit" value="Search" /> <i class="rbi rbi-cright"
+                                                            aria-hidden="true"></i></span></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <nav class="mobile-menu-wrap edge-padding">
+                                        <ul id="mobile-menu" class="mobile-menu">
+                                            <li id="menu-item-1841"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1841">
+                                                <a href="#"><span>Home</span></a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-1846"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1846">
+                                                        <a href="index.html"><span>Home 1</span></a></li>
+                                                    <li id="menu-item-1845"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1845">
+                                                        <a href="home-2/index.html"><span>Home 2</span></a></li>
+                                                    <li id="menu-item-1844"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1844">
+                                                        <a href="home-3/index.html"><span>Home 3</span></a></li>
+                                                    <li id="menu-item-1843"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1843">
+                                                        <a href="home-4/index.html"><span>Home 4</span></a></li>
+                                                    <li id="menu-item-1842"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1842">
+                                                        <a href="home-5/index.html"><span>Home 5</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li id="menu-item-1701"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1701">
+                                                <a href="#"><span>Categories</span></a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-1702"
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1702">
+                                                        <a href="category/tech-news/index.html"><span>Tech
+                                                                News</span></a></li>
+                                                    <li id="menu-item-1703"
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1703">
+                                                        <a href="category/gadget/index.html"><span>Gadget</span></a>
+                                                    </li>
+                                                    <li id="menu-item-1704"
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1704">
+                                                        <a
+                                                            href="category/technology/index.html"><span>Technology</span></a>
+                                                    </li>
+                                                    <li id="menu-item-1705"
+                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1705">
+                                                        <a href="category/mobile/index.html"><span>Mobile</span></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li id="menu-item-1706"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1706">
+                                                <a href="#"><span>Bookmarks</span></a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-1707"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1707">
+                                                        <a href="customize-interests/index.html"><span>Customize
+                                                                Interests</span></a></li>
+                                                    <li id="menu-item-1708"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1708">
+                                                        <a href="my-bookmarks/index.html"><span>My Bookmarks</span></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li id="menu-item-1709"
+                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1709">
+                                                <a href="#"><span>More Foxiz</span></a>
+                                                <ul class="sub-menu">
+                                                    <li id="menu-item-1710"
+                                                        class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1710">
+                                                        <a href="blog/index.html"><span>Blog Index</span></a></li>
+                                                    <li id="menu-item-1711"
+                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1711">
+                                                        <a href="#"><span>Sitemap</span></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <div class="collapse-sections edge-padding">
+                                        <div class="mobile-login"> <span class="mobile-login-title h6">Have an existing
+                                                account?</span> <a
+                                                href="wp-login95d2.html?redirect_to=https%3A%2F%2Ffoxiz.themeruby.com%2Ftech"
+                                                class="login-toggle is-login is-btn">Sign In</a></div>
+                                        <div class="mobile-socials"> <span class="mobile-social-title h6">Follow
+                                                US</span> <a class="social-link-facebook" aria-label="Facebook"
+                                                data-title="Facebook" href="#" target="_blank"
+                                                rel="noopener nofollow"><i class="rbi rbi-facebook"
+                                                    aria-hidden="true"></i></a><a class="social-link-twitter"
+                                                aria-label="Twitter" data-title="Twitter" href="#" target="_blank"
+                                                rel="noopener nofollow"><i class="rbi rbi-twitter"
+                                                    aria-hidden="true"></i></a><a class="social-link-youtube"
+                                                aria-label="YouTube" data-title="YouTube" href="#" target="_blank"
+                                                rel="noopener nofollow"><i class="rbi rbi-youtube"
+                                                    aria-hidden="true"></i></a></div>
+                                    </div>
+                                    <div class="collapse-footer">
+                                        <div class="collapse-footer-menu">
+                                            <ul id="menu-footer-copyright-1" class="collapse-footer-menu-inner">
+                                                <li
+                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1643">
+                                                    <a href="#"><span>Contact</span></a></li>
+                                                <li
+                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1644">
+                                                    <a href="#"><span>Blog</span></a></li>
+                                                <li
+                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1645">
+                                                    <a href="#"><span>Complaint</span></a></li>
+                                                <li
+                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1646">
+                                                    <a href="#"><span>Advertise</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="collapse-copyright">© 2022 Foxiz News Network. Ruby Design Company.
+                                            All Rights Reserved.</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-                    @include('layouts.utama.navhp')
                 </div>
             </div>
         </header>
+      
         <div class="site-wrap">
-            <div data-elementor-type="wp-page" data-elementor-id="1465" class="elementor elementor-1465">
-                <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-467e77c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                    data-id="467e77c" data-element_type="section"
-                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                    <div class="elementor-container elementor-column-gap-no">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1bfd813"
-                            data-id="1bfd813" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <section
-                                    class="elementor-section elementor-inner-section elementor-element elementor-element-49a1f42 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                                    data-id="49a1f42" data-element_type="section">
-                                    <div class="elementor-container elementor-column-gap-custom">
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-08344ab"
-                                            data-id="08344ab" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-707005c elementor-widget elementor-widget-foxiz-overlay-1"
-                                                    data-id="707005c" data-element_type="widget"
-                                                    data-widget_type="foxiz-overlay-1.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div id="uid_707005c"
-                                                            class="block-wrap block-overlay overlay-1 light-overlay-scheme p-gradient ecat-bg-2 ecat-size-big">
-                                                            <div class="block-inner">
-                                                                <div class="post-slider swiper-container pre-load"
-                                                                    data-play="1" data-speed="5000">
-                                                                    <div class="swiper-wrapper">
-                                                                        @foreach ($berita as $row)
-                                                                        <div class="p-wrap p-highlight p-overlay-1 swiper-slide"
-                                                                            data-pid="1599">
-                                                                            <div class="overlay-holder">
-                                                                                <div class="p-featured"> <a
-                                                                                        class="p-flink"
-                                                                                        href="/isi_berita/{{ $row->id }}"
-                                                                                        title="{{$row->judul}}">
-                                                                                        <img width="615" height="410"
-                                                                                            src="{{asset('foto/'. $row->foto)}}"
-                                                                                            class="featured-img wp-post-image"
-                                                                                            alt="" decoding="async"
-                                                                                            loading="lazy" /> </a></div>
-                                                                                <div class="overlay-wrap">
-                                                                                    <div
-                                                                                        class="overlay-inner p-content overlay-text">
-                                                                                        <div class="p-categories p-top">
-
-                                                                                        </div>
-                                                                                        <h2 class="entry-title"> <a
-                                                                                                class="p-url"
-                                                                                                href="/isi_berita/{{ $row->id }}"
-                                                                                                rel="bookmark">{{ $row->judul }}</a>
-                                                                                        </h2>
-                                                                                        <div
-                                                                                            class="review-meta is-meta is-rstyle-1 type-score has-bookmark">
-                                                                                            <div
-                                                                                                class="review-meta-inner">
-                                                                                                <!-- <span
-                                                                                                    class="rline-wrap"><span
-                                                                                                        class="rline activated"></span><span
-                                                                                                        class="rline activated"></span><span
-                                                                                                        class="rline activated"></span><span
-                                                                                                        class="rline activated"></span><span
-                                                                                                        class="rline activated"></span></span> -->
-                                                                                                <div
-                                                                                                    class="review-extra">
-                                                                                                    <!-- <span
-                                                                                                        class="review-description"><strong
-                                                                                                            class="meta-bold">8.8</strong>
-                                                                                                        dari
-                                                                                                        10</span><span
-                                                                                                        class="extra-meta meta-bold">Nilai
-                                                                                                        Bagus</span> -->
-                                                                                                </div>
-                                                                                            </div><span
-                                                                                                class="rb-bookmark bookmark-trigger"
-                                                                                                data-pid="1599">
-                                                                                                <!-- <i
-                                                                                                    data-title="Save it"
-                                                                                                    class="rbi rbi-bookmark"></i> -->
-                                                                                                    <!-- <i
-                                                                                                    data-title="Remove"
-                                                                                                    class="bookmarked-icon rbi rbi-bookmark-fill"></i> -->
-                                                                                                </span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        @endforeach
-
-                                                                         
-                                                                    </div>
-                                                                    <div
-                                                                        class="slider-pagination slider-pagination-top">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-0d1cf89"
-                                            data-id="0d1cf89" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-aa80c64 elementor-widget elementor-widget-foxiz-grid-box-1"
-                                                    data-id="aa80c64" data-element_type="widget"
-                                                    data-widget_type="foxiz-grid-box-1.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div id="uid_aa80c64"
-                                                            class="block-wrap block-grid block-grid-box-1 rb-columns rb-col-1 rb-tcol-1 rb-mcol-1 is-gap-20 light-scheme">
-                                                            <div class="block-inner">
-                                                                @foreach ($berita1 as $row)
-                                                                    
-                                                                <div class="p-wrap p-grid p-box p-grid-box-1 box-bg"
-                                                                data-pid="1565">
-                                                                <div class="grid-box">
-                                                                    <div class="feat-holder overlay-text">
-                                                                        <div class="p-featured"> <a class="p-flink"
-                                                                                href="/isi_berita/{{ $row->id }}"
-                                                                                title="{{$row->judul}}">
-                                                                                <img width="420" height="280"
-                                                                                    src="{{asset('foto/'. $row->foto)}}"
-                                                                                    class="featured-img wp-post-image"
-                                                                                    alt="" decoding="async"
-                                                                                    loading="lazy" /> </a>
-                                                                            <aside
-                                                                                class="p-format-overlay format-style-bottom">
-                                                                                <span
-                                                                                    class="p-format format-video"><i
-                                                                                        class="rbi rbi-video"></i></span>
-                                                                            </aside>
-                                                                        </div>
-                                                                    </div>
-                                                                    <h3 class="entry-title"> <a class="p-url"
-                                                                            href="/isi_berita/{{ $row->id }}"
-                                                                            rel="bookmark">{{ $row->judul }}</a></h3>
-                                                                    <div class="p-meta has-bookmark">
-                                                                        <div class="meta-inner is-meta"> <span
-                                                                                class="meta-el meta-read"><i
-                                                                                    class="rbi rbi-watch"></i></span></div> <span
-                                                                            class="rb-bookmark bookmark-trigger"
-                                                                            data-pid="1565"></i><i
-                                                                                data-title="Remove"
-                                                                                class="bookmarked-icon rbi rbi-bookmark-fill"></i></span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                                @endforeach
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-a04d314"
-                                            data-id="a04d314" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-57d9544 elementor-widget elementor-widget-foxiz-overlay-2"
-                                                    data-id="57d9544" data-element_type="widget"
-                                                    data-widget_type="foxiz-overlay-2.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div id="uid_57d9544"
-                                                            class="block-wrap block-overlay block-overlay-2 light-overlay-scheme p-gradient rb-columns rb-col-1 rb-tcol-1 rb-mcol-1 is-gap-7">
-                                                            <div class="block-inner">
-                                                                @foreach ($berita2 as $row)  
-                                                                <div class="p-wrap p-overlay p-overlay-2"
-                                                                    data-pid="1563">
-                                                                    <div class="overlay-holder">
-                                                                        <div class="p-featured"> <a class="p-flink"
-                                                                                href="/isi_berita/{{ $row->id }}"
-                                                                                title="{{$row->judul}}">
-                                                                                <img width="420" height="280"
-                                                                                    src="{{asset('foto/'. $row->foto)}}"
-                                                                                    class="featured-img wp-post-image"
-                                                                                    alt="" decoding="async"
-                                                                                    loading="lazy" /> </a></div>
-                                                                        <div class="overlay-wrap">
-                                                                            <div
-                                                                                class="p-content overlay-inner overlay-text">
-                                                                                <h4 class="entry-title"> <a
-                                                                                        class="p-url"
-                                                                                        href="/isi_berita/{{ $row->id }}"
-                                                                                        rel="bookmark">{{$row->judul}}</a></h4>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                @endforeach
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                                <section
-                                    class="elementor-section elementor-inner-section elementor-element elementor-element-e55358e elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                                    data-id="e55358e" data-element_type="section">
-                                    <div class="elementor-container elementor-column-gap-custom">
-                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-3431afd"
-                                            data-id="3431afd" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-e3e39d6 elementor-widget elementor-widget-foxiz-grid-box-1"
-                                                    data-id="e3e39d6" data-element_type="widget"
-                                                    data-widget_type="foxiz-grid-box-1.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div id="uid_e3e39d6"
-                                                            class="block-wrap block-grid block-grid-box-1 rb-columns rb-col-4 rb-tcol-2 rb-mcol-2 is-gap-7 ecat-bg-2">
-                                                            
-                                                            <div class="block-inner">
-                                                                @foreach ($berita3 as $row)
-                                                                <div class="p-wrap p-grid p-box p-grid-box-1 box-bg"
-                                                                    data-pid="1559">
-                                                                    <div class="grid-box">
-                                                                        <div class="feat-holder overlay-text">
-                                                                            <div class="p-featured"> <a class="p-flink"
-                                                                                    href="/isi_berita/{{ $row->id }}"
-                                                                                    title="{{$row->judul}}">
-                                                                                    <img width="420" height="280"
-                                                                                        src="{{asset('foto/'. $row->foto)}}"
-                                                                                        class="featured-img wp-post-image"
-                                                                                        alt="" decoding="async"
-                                                                                        loading="lazy" /> </a>
-                                                                                <aside
-                                                                                    class="p-format-overlay format-style-bottom">
-                                                                                    <span
-                                                                                        class="p-format format-radio"><i
-                                                                                            class="rbi rbi-audio"></i></span>
-                                                                                </aside>
-                                                                            </div>
-                                                                            <div class="p-categories p-top">
-                                                                                <!-- <a
-                                                                                    class="p-category category-id-1"
-                                                                                    href="category/tech-news/index.html"
-                                                                                    rel="category">Berita Teknologi</a> -->
-                                                                            </div>
-                                                                        </div>
-                                                                        <h4 class="entry-title"> <a class="p-url"
-                                                                                href="/isi_berita/{{ $row->id }}"
-                                                                                rel="bookmark">
-                                                                               {{$row->judul}}</a></h4>
-                                                                        <div class="p-meta has-bookmark">
-                                                                            
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            
-                                                                @endforeach
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
+            <header class="search-header">
+                <div class="rb-container edge-padding">
+                    <div class="search-header-inner">
+                        <div class="search-header-content">
+                            <h1 class="search-title">Hasil Pencarian Anda...</h1>
                         </div>
+                      
                     </div>
-                </section>
-                <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-9c1da3e elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                    data-id="9c1da3e" data-element_type="section"
-                    data-settings="{&quot;animation&quot;:&quot;none&quot;}">
-                    <div class="elementor-container elementor-column-gap-custom">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-ae5a849"
-                            data-id="ae5a849" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-3dbcdda elementor-widget elementor-widget-foxiz-ad-image"
-                                    data-id="3dbcdda" data-element_type="widget"
-                                    data-widget_type="foxiz-ad-image.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="ad-wrap ad-image-wrap">
-                                            <h6 class="ad-description is-meta">- Disponsori -</h6>
-                                            @foreach ($iklan as $row)
-                                                    
-                                                <div class="ad-image">
-                                                    <img loading="lazy" decoding="async"
-                                                        src="{{ asset('fotoiklan/'. $row->foto)}}"
-                                                        alt="Ad image" width="128" height="10" />
-                                                </div>
-                                                @endforeach
+                </div>
+            </header>
+            <div class="blog-wrap without-sidebar sticky-sidebar">
+                <div class="rb-container edge-padding">
+                    <div class="grid-container">
+                        <div class="blog-content">
+                            <div id="uid_search_0"
+                                class="block-wrap block-small block-grid block-grid-small-1 rb-columns rb-col-4 is-gap-10 ecat-bg-2">
+                                <div class="block-inner">
+                                    @foreach ($berita as $row)
+                                        
+                                    <div class="p-wrap p-grid p-grid-small-1" data-pid="1599">
+                                        <div class="feat-holder overlay-text">
+                                            <div class="p-featured"> <a class="p-flink"
+                                                    href="/isi_berita/{{ $row->id }}"
+                                                    title="{{$row->judul}}"> <img
+                                                        width="330" height="220"
+                                                        src="{{asset('foto/'. $row->foto)}}"
+                                                        class="featured-img wp-post-image" alt=""
+                                                        decoding="async" loading="lazy" /> </a></div>
+                                         
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-970a442 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                    data-id="970a442" data-element_type="section"
-                    data-settings="{&quot;animation&quot;:&quot;none&quot;}">
-                    <div class="elementor-container elementor-column-gap-custom">
-                        <div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-7d1ef53 elementor-invisible"
-                            data-id="7d1ef53" data-element_type="column"
-                            data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;}">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-f396043 elementor-invisible elementor-widget elementor-widget-foxiz-heading"
-                                    data-id="f396043" data-element_type="widget"
-                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                    data-widget_type="foxiz-heading.default">
-                                    <div class="elementor-widget-container">
-                                        <div id="uid_f396043" class="block-h heading-layout-1">
-                                            <div class="heading-inner">
-                                                <h3 class="heading-title"><span>Berita Lanjutan</span></h3>
-                                            </div>
-                                        </div>
-                                    </div>judul
-                                </div>
-                                <div class="elementor-element elementor-element-7a4c608 elementor-widget elementor-widget-foxiz-overlay-1"
-                                data-id="7a4c608" data-element_type="widget"
-                                data-widget_type="foxiz-overlay-1.default">
-                                <div class="elementor-widget-container">
-                                    <div id="uid_7a4c608"
-                                        class="block-wrap block-overlay overlay-1 light-overlay-scheme p-gradient ecat-bg-2 ecat-size-big">
-                                        <div class="block-inner">
-                                            @foreach ($berita4 as $row)
-                                                
-                                            <div class="p-wrap p-highlight p-overlay-1" data-pid="1512">
-                                                <div class="overlay-holder">
-                                                    <div class="p-featured"> <a class="p-flink"
-                                                            href="/isi_berita/{{ $row->id }}"
-                                                            title="{{$row->judul}}"> <img
-                                                                width="860" height="573"
-                                                                src="{{asset('foto/'. $row->foto)}}"
-                                                                class="featured-img wp-post-image" alt=""
-                                                                decoding="async" loading="lazy" /> </a></div>
-                                                    <div class="overlay-wrap">
-                                                        <div class="overlay-inner p-content overlay-text">
-                                                            <!-- <div class="p-categories p-top"><a
-                                                                    class="p-category category-id-2"
-                                                                    href="category/technology/index.html"
-                                                                    rel="category">Teknologi</a></div> -->
-                                                            <h2 class="entry-title"> <a class="p-url"
-                                                                    href="/isi_berita/{{ $row->id }}"
-                                                                    rel="bookmark">{{$row->judul}}</a></h2>
-                                                            <div class="p-meta has-bookmark">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="elementor-element elementor-element-aecf33f elementor-widget elementor-widget-foxiz-list-box-1"
-                                    data-id="aecf33f" data-element_type="widget"
-                                    data-widget_type="foxiz-list-box-1.default">
-                                    <div class="elementor-widget-container">
-                                        <div id="uid_aecf33f"
-                                            class="block-wrap block-big block-list block-list-box-1 ecat-bg-2 featured-right">
-                                            <div class="block-inner">
-                                                @foreach ($berita5 as $row)
-                                                    
-                                            <div class="p-wrap p-list p-box p-list-1 p-list-box-1 box-bg"
-                                                data-pid="1515">
-                                                <div class="list-box">
-                                                    <div class="list-holder">
-                                                        <div class="list-feat-holder">
-                                                            <div class="feat-holder overlay-text">
-                                                                <div class="p-featured"> <a class="p-flink"
-                                                                        href="/isi_berita/{{ $row->id }}"
-                                                                        title="{{$row->judul}}">
-                                                                        <img width="420" height="280"
-                                                                            src="{{asset('foto/'. $row->foto)}}"
-                                                                            class="featured-img wp-post-image"
-                                                                            alt="" decoding="async"
-                                                                            loading="lazy" /> </a></div>
-                                                                <!-- <div class="p-categories p-top"><a
-                                                                        class="p-category category-id-2"
-                                                                        href="category/technology/index.html"
-                                                                        rel="category">Teknologi</a></div> -->
-                                                            </div>
-                                                        </div>
-                                                        <div class="p-content">
-                                                            <h3 class="entry-title"> <a class="p-url"
-                                                                    href="/isi_berita/{{ $row->id }}"
-                                                                    rel="bookmark">{{$row->judul}}</a></h3>
-                                                            <div class="ellipsis entry-summary"><a class="p-url"
-                                                                href="/isi_berita/{{ $row->id }}"
-                                                                rel="bookmark">{!!$row->isi!!}</a><span>&hellip;</span></div>
-                                                            <div class="sponsor-meta meta-text">
-                                                                <div class="sponsor-inner"> <span
-                                                                        class="sponsor-icon">
-                                                                        <!-- <i
-                                                                            class="rbi rbi-notification"></i> -->
-                                                                        </span>
-                                                                </div> 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-
-
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="elementor-element elementor-element-7a4c608 elementor-widget elementor-widget-foxiz-overlay-1"
-                                    data-id="7a4c608" data-element_type="widget"row
-                                    data-widget_type="foxiz-overlay-1.default">
-                                    <div class="elementor-widget-container">
-                                        <div id="uid_7a4c608"
-                                            class="block-wrap block-overlay overlay-1 light-overlay-scheme p-gradient ecat-bg-2 ecat-size-big">
-                                            <div class="block-inner">
-                                                @foreach ($berita6 as $row)
-                                                    
-                                                <div class="p-wrap p-highlight p-overlay-1" data-pid="1512">
-                                                    <div class="overlay-holder">
-                                                        <div class="p-featured"> <a class="p-flink"
-                                                                href="/isi_berita/{{ $row->id }}"
-                                                                title="{{$row->judul}}"> <img
-                                                                    width="860" height="573"
-                                                                    src="{{asset('foto/'. $row->foto)}}"
-                                                                    class="featured-img wp-post-image" alt=""
-                                                                    decoding="async" loading="lazy" /> </a></div>
-                                                        <div class="overlay-wrap">
-                                                            <div class="overlay-inner p-content overlay-text">
-                                                                <!-- <div class="p-categories p-top"><a
-                                                                        class="p-category category-id-2"
-                                                                        href="category/technology/index.html"
-                                                                        rel="category">Teknologi</a></div> -->
-                                                                <h2 class="entry-title"> <a class="p-url"
-                                                                        href="/isi_berita/{{ $row->id }}"
-                                                                        rel="bookmark">{{$row->judul}}</a></h2>
-                                                                <div class="p-meta has-bookmark">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                @endforeach
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="elementor-element elementor-element-9262f1d elementor-widget elementor-widget-foxiz-list-box-1"
-                                    data-id="9262f1d" data-element_type="widget"
-                                    data-widget_type="foxiz-list-box-1.default">
-                                    <div class="elementor-widget-container">
-                                        <div id="uid_9262f1d"
-                                            class="block-wrap block-big block-list block-list-box-1 ecat-bg-2 featured-right">
-                                            <div class="block-inner">
-                                                    @foreach ($berita7 as $row)
-                                                        
-                                                <div class="p-wrap p-list p-box p-list-1 p-list-box-1 box-bg"
-                                                    data-pid="1515">
-                                                    <div class="list-box">
-                                                        <div class="list-holder">
-                                                            <div class="list-feat-holder">
-                                                                <div class="feat-holder overlay-text">
-                                                                    <div class="p-featured"> <a class="p-flink"
-                                                                            href="/isi_berita/{{ $row->id }}"
-                                                                            title="{{$row->judul}}">
-                                                                            <img width="420" height="280"
-                                                                                src="{{asset('foto/'. $row->foto)}}"
-                                                                                class="featured-img wp-post-image"
-                                                                                alt="" decoding="async"
-                                                                                loading="lazy" /> </a></div>
-                                                                    <!-- <div class="p-categories p-top"><a
-                                                                            class="p-category category-id-2"
-                                                                            href="category/technology/index.html"
-                                                                            rel="category">Teknologi</a></div> -->
-                                                                </div>
-                                                            </div>
-                                                            <div class="p-content">
-                                                                <h3 class="entry-title"> <a class="p-url"
-                                                                        href="/isi_berita/{{ $row->id }}"
-                                                                        rel="bookmark">{{$row->judul}}</a></h3>
-                                                                <div class="ellipsis entry-summary"><a class="p-url"
-                                                                    href="/isi_berita/{{ $row->id }}"
-                                                                    rel="bookmark">{!!$row->isi!!}</a><span>&hellip;</span></div>
-                                                                <div class="sponsor-meta meta-text">
-                                                                    <div class="sponsor-inner"> <span
-                                                                            class="sponsor-icon">
-                                                                            <!-- <i
-                                                                                class="rbi rbi-notification"></i> -->
-                                                                            </span>
-                                                                    </div> 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                @endforeach
-
-
-                                            </div>
-                                            <!-- <div class="pagination-wrap pagination-loadmore"> <a href="#"
-                                                    class="loadmore-trigger"><span>Menampilkan lebih banyak</span><i
-                                                        class="rb-loader"></i></a></div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6c530d1 rb-sticky is-sidebar"
-                            data-id="6c530d1" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-86b3bc1 elementor-widget elementor-widget-foxiz-banner"
-                                    data-id="86b3bc1" data-element_type="widget"
-                                    data-widget_type="foxiz-banner.default">
-                                    <div class="elementor-widget-container">
-                                        @foreach ($iklan1 as $row)
-                                            
-                                        <div class="w-banner">
-                                            <div class="banner-bg"> <img loading="lazy" decoding="async"
-                                                    data-mode="default"
-                                                    src="{{ asset('fotoiklan/'. $row->foto)}}"
-                                                    alt="banner" width="400" height="600"> <img loading="lazy"
-                                                    decoding="async" data-mode="dark"
-                                                    src="{{ asset('fotoiklan/'. $row->foto)}}" alt="banner"
-                                                    width="600" height="900"></div>
-                                            <div class="w-banner-content">
+                                        <div class="p-content">
+                                            <h4 class="entry-title"> <a class="p-url"
+                                                    href="/isi_berita/{{ $row->id }}"
+                                                    rel="bookmark">{{$row->judul}}</a>
+                                            </h4>
+                                            <div class="review-meta is-meta is-rstyle-0 type-score has-bookmark">
                                                 
                                             </div>
                                         </div>
-                                        @endforeach
-
                                     </div>
+                                    @endforeach
+                                   
                                 </div>
-                                <div class="elementor-element elementor-element-4a9eadc elementor-invisible elementor-widget elementor-widget-foxiz-heading"
-                                    data-id="4a9eadc" data-element_type="widget"
-                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                    data-widget_type="foxiz-heading.default">
-                                    <div class="elementor-widget-container">
-                                        <div id="uid_4a9eadc" class="block-h heading-layout-1">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {{$berita->links()}}
+                                
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
         </div>
         @include('layouts.utama.footer')
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
     <script>
         (function () {
             let currentMode = null;
-            let darkModeID = 'D_foxiz.themeruby.com_tech';
+            let darkModeID = "D_foxiz.themeruby.com_tech";
             if (navigator.cookieEnabled) {
                 currentMode = localStorage.getItem(darkModeID);
             }
             if (null === currentMode) {
-                currentMode = document.body.getAttribute('data-theme');
+                currentMode = document.body.getAttribute("data-theme");
             }
-            if ('dark' === currentMode) {
-                document.body.setAttribute('data-theme', 'dark');
-                let darkIcons = document.getElementsByClassName('mode-icon-dark');
+            if ("dark" === currentMode) {
+                document.body.setAttribute("data-theme", "dark");
+                let darkIcons =
+                    document.getElementsByClassName("mode-icon-dark");
                 if (darkIcons.length) {
                     for (let i = 0; i < darkIcons.length; i++) {
-                        darkIcons[i].classList.add('activated');
+                        darkIcons[i].classList.add("activated");
                     }
                 }
             } else {
-                document.body.setAttribute('data-theme', 'default');
-                let defaultIcons = document.getElementsByClassName('mode-icon-default');
+                document.body.setAttribute("data-theme", "default");
+                let defaultIcons =
+                    document.getElementsByClassName("mode-icon-default");
                 if (defaultIcons.length) {
                     for (let i = 0; i < defaultIcons.length; i++) {
-                        defaultIcons[i].classList.add('activated');
+                        defaultIcons[i].classList.add("activated");
                     }
                 }
             }
@@ -30619,7 +30330,7 @@
             top: 25%;
             display: flex;
             align-items: center;
-            flex-flow: column nowrap
+            flex-flow: column nowrap;
         }
 
         .quick-view-link {
@@ -30630,173 +30341,173 @@
             align-items: center;
             justify-content: center;
             background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, .12);
-            -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, .12);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
             border-radius: 9px;
             -webkit-border-radius: 9px;
-            transition: all .3s;
-            --webkit-transition: all .3s
+            transition: all 0.3s;
+            --webkit-transition: all 0.3s;
         }
 
         .quick-view-link svg {
             width: 40px;
-            height: auto
+            height: auto;
         }
 
         .quick-view-buy svg {
             width: 42px;
-            height: auto
+            height: auto;
         }
 
         .quick-view-buy {
             margin-top: 10px;
-            color: #5772ff
+            color: #5772ff;
         }
 
         .quick-view-buy:hover {
             color: #fff;
-            background-color: #5772ff
+            background-color: #5772ff;
         }
 
         .quick-view-demos {
-            color: #333
+            color: #333;
         }
 
         .quick-view-link {
-            overflow: hidden
+            overflow: hidden;
         }
 
         .quick-view-demos:hover {
-            color: #5772ff
+            color: #5772ff;
         }
 
         .ruby-sale-icon {
             width: 90px;
             height: auto;
             display: flex;
-            margin-bottom: 5px
+            margin-bottom: 5px;
         }
 
         .ruby-sale-icon img {
             display: block;
-            width: 100%
+            width: 100%;
         }
 
         .ruby-sale-icon img:hover {
-            animation: rb-shake .7s;
-            -webkit-animation: rb-shake .7s;
-            animation-iteration-count: infinite
+            animation: rb-shake 0.7s;
+            -webkit-animation: rb-shake 0.7s;
+            animation-iteration-count: infinite;
         }
 
         .ruby-sale-icon img {
             animation: rb-shake-delay 4s;
             -webkit-animation: rb-shake-delay 4s;
-            animation-iteration-count: infinite
+            animation-iteration-count: infinite;
         }
 
         @keyframes rb-shake-delay {
             0% {
-                transform: translate(1px, 1px) rotate(0deg)
+                transform: translate(1px, 1px) rotate(0deg);
             }
 
             2% {
-                transform: translate(-1px, -2px) rotate(-1deg)
+                transform: translate(-1px, -2px) rotate(-1deg);
             }
 
             4% {
-                transform: translate(-3px, 0px) rotate(1deg)
+                transform: translate(-3px, 0px) rotate(1deg);
             }
 
             6% {
-                transform: translate(3px, 2px) rotate(0deg)
+                transform: translate(3px, 2px) rotate(0deg);
             }
 
             8% {
-                transform: translate(1px, -1px) rotate(1deg)
+                transform: translate(1px, -1px) rotate(1deg);
             }
 
             10% {
-                transform: translate(-1px, 2px) rotate(-1deg)
+                transform: translate(-1px, 2px) rotate(-1deg);
             }
 
             12% {
-                transform: translate(-3px, 1px) rotate(0deg)
+                transform: translate(-3px, 1px) rotate(0deg);
             }
 
             14% {
-                transform: translate(3px, 1px) rotate(-1deg)
+                transform: translate(3px, 1px) rotate(-1deg);
             }
 
             16% {
-                transform: translate(-1px, -1px) rotate(1deg)
+                transform: translate(-1px, -1px) rotate(1deg);
             }
 
             18% {
-                transform: translate(1px, 2px) rotate(0deg)
+                transform: translate(1px, 2px) rotate(0deg);
             }
 
             20% {
-                transform: translate(1px, -2px) rotate(-1deg)
+                transform: translate(1px, -2px) rotate(-1deg);
             }
 
             11% {
-                transform: translate(0, 0) rotate(0deg)
+                transform: translate(0, 0) rotate(0deg);
             }
 
             100% {
-                transform: translate(0, 0) rotate(0deg)
+                transform: translate(0, 0) rotate(0deg);
             }
         }
 
         @keyframes rb-shake {
             0% {
-                transform: translate(1px, 1px) rotate(0deg)
+                transform: translate(1px, 1px) rotate(0deg);
             }
 
             10% {
-                transform: translate(-1px, -2px) rotate(-1deg)
+                transform: translate(-1px, -2px) rotate(-1deg);
             }
 
             20% {
-                transform: translate(-3px, 0px) rotate(1deg)
+                transform: translate(-3px, 0px) rotate(1deg);
             }
 
             30% {
-                transform: translate(3px, 2px) rotate(0deg)
+                transform: translate(3px, 2px) rotate(0deg);
             }
 
             40% {
-                transform: translate(1px, -1px) rotate(1deg)
+                transform: translate(1px, -1px) rotate(1deg);
             }
 
             50% {
-                transform: translate(-1px, 2px) rotate(-1deg)
+                transform: translate(-1px, 2px) rotate(-1deg);
             }
 
             60% {
-                transform: translate(-3px, 1px) rotate(0deg)
+                transform: translate(-3px, 1px) rotate(0deg);
             }
 
             70% {
-                transform: translate(3px, 1px) rotate(-1deg)
+                transform: translate(3px, 1px) rotate(-1deg);
             }
 
             80% {
-                transform: translate(-1px, -1px) rotate(1deg)
+                transform: translate(-1px, -1px) rotate(1deg);
             }
 
             90% {
-                transform: translate(1px, 2px) rotate(0deg)
+                transform: translate(1px, 2px) rotate(0deg);
             }
 
             100% {
-                transform: translate(1px, -2px) rotate(-1deg)
+                transform: translate(1px, -2px) rotate(-1deg);
             }
         }
 
-        @media (max-width:767px) {
+        @media (max-width: 767px) {
             .single-post .demos-quick-view {
-                bottom: 65px
+                bottom: 65px;
             }
 
             .demos-quick-view {
@@ -30805,417 +30516,121 @@
                 top: auto;
                 left: 50%;
                 right: auto;
-                margin-left: -55px
+                margin-left: -55px;
             }
 
             .quick-view-buy {
                 margin-left: 10px;
-                margin-top: 0
+                margin-top: 0;
             }
 
             .rtl .quick-view-buy {
                 margin-left: 0;
                 margin-top: 0;
-                margin-right: 10px
+                margin-right: 10px;
             }
 
             .quick-view-link {
                 width: 50px;
                 height: 50px;
-                border-radius: 7px
+                border-radius: 7px;
             }
 
             .quick-view-link svg {
-                width: 34px
+                width: 34px;
             }
 
             .ruby-sale-icon {
-                display: none
+                display: none;
             }
         }
 
         @media print {
             .demos-quick-view {
-                display: none !important
+                display: none !important;
             }
         }
     </style>
-    <!-- <div class="demos-quick-view">
-        <div class="ruby-sale-icon"><a target="_blank" href="http://1.envato.market/MXYjYo"><img
-                    src="wp-content/plugins/foxiz-demos-selection-sale/sale.png" alt="sale off" loading="lazy"></a>
-        </div> <a class="quick-view-link quick-view-demos" href="https://foxiz.themeruby.com/demos/" target="_blank">
-            <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="400" height="400" viewBox="0, 0, 400,400">
-                <g id="svgg">
-                    <path id="path0"
-                        d="M189.629 6.244 C 182.308 10.110,177.182 16.462,175.028 24.334 C 172.888 32.156,172.944 246.829,175.088 254.875 C 178.763 268.666,196.565 279.598,206.390 274.097 C 207.176 273.657,213.189 271.780,219.753 269.926 C 226.317 268.072,236.132 265.251,241.564 263.657 C 246.996 262.064,253.848 260.110,256.790 259.315 C 259.733 258.521,264.733 257.091,267.901 256.137 C 275.284 253.916,282.547 251.842,295.885 248.145 C 330.748 238.481,332.033 237.788,337.948 225.448 L 340.875 219.342 340.597 137.037 L 340.320 54.733 338.437 51.197 C 333.907 42.693,331.396 41.046,316.872 37.063 C 313.930 36.256,306.893 34.221,301.235 32.541 C 288.476 28.754,266.274 22.284,262.963 21.388 C 261.605 21.021,255.864 19.347,250.206 17.668 C 244.547 15.989,238.066 14.133,235.802 13.543 C 233.539 12.954,225.319 10.592,217.537 8.294 C 200.668 3.313,195.850 2.959,189.629 6.244 M125.134 31.005 C 119.099 33.633,114.363 39.137,112.308 45.910 C 110.547 51.712,110.547 232.238,112.308 238.040 C 116.345 251.346,127.664 257.107,141.198 252.744 C 143.889 251.877,147.109 250.944,148.354 250.671 L 150.617 250.174 150.617 141.991 L 150.617 33.808 147.119 32.895 C 145.195 32.393,141.795 31.453,139.563 30.806 C 134.450 29.324,128.814 29.402,125.134 31.005 M61.800 62.318 C 59.561 63.204,55.784 67.105,54.236 70.132 C 51.681 75.129,51.820 209.010,54.386 213.932 C 58.731 222.268,65.288 223.674,79.634 219.346 L 87.251 217.048 87.041 141.703 L 86.831 66.359 79.012 64.077 C 71.757 61.959,64.566 61.225,61.800 62.318 M287.788 107.202 C 291.260 111.086,302.057 126.602,302.036 127.679 C 302.002 129.478,261.910 182.716,260.590 182.716 C 259.467 182.716,218.930 129.172,218.930 127.688 C 218.930 127.044,223.834 119.978,231.434 109.671 L 234.620 105.350 260.376 105.350 C 286.048 105.350,286.138 105.356,287.788 107.202 M239.506 111.598 C 239.506 112.394,246.284 121.811,246.857 121.811 C 247.493 121.811,253.378 114.027,254.034 112.318 C 254.420 111.312,253.251 111.111,247.002 111.111 C 242.879 111.111,239.506 111.330,239.506 111.598 M266.667 111.617 C 266.667 112.720,273.710 121.745,274.408 121.536 C 274.818 121.414,276.797 119.018,278.805 116.212 L 282.457 111.111 274.562 111.111 C 270.219 111.111,266.667 111.339,266.667 111.617 M256.152 118.503 C 253.787 121.663,251.852 124.441,251.852 124.676 C 251.852 124.911,255.741 125.103,260.494 125.103 C 270.586 125.103,270.262 125.589,264.943 118.413 C 259.937 111.661,261.281 111.648,256.152 118.503 M230.864 119.147 C 229.053 121.721,227.449 124.115,227.298 124.465 C 227.147 124.816,230.418 125.103,234.568 125.103 C 238.717 125.103,241.989 124.816,241.838 124.465 C 241.268 123.140,234.961 114.466,234.568 114.466 C 234.342 114.466,232.675 116.572,230.864 119.147 M282.791 119.499 L 278.930 124.691 286.071 124.931 C 289.998 125.062,293.394 124.987,293.618 124.764 C 293.946 124.435,289.595 117.780,287.216 114.973 C 286.906 114.607,284.915 116.644,282.791 119.499 M227.160 130.433 C 227.160 130.648,233.322 139.074,240.854 149.157 C 248.385 159.240,254.334 166.749,254.075 165.844 C 253.815 164.938,251.709 157.160,249.394 148.560 C 247.079 139.959,244.993 132.274,244.759 131.481 C 244.359 130.129,227.160 129.103,227.160 130.433 M250.206 130.923 C 250.206 131.408,252.039 138.537,254.280 146.766 C 256.521 154.995,258.790 163.502,259.324 165.669 C 259.857 167.837,260.414 169.490,260.560 169.344 C 260.707 169.197,262.906 161.313,265.448 151.823 C 267.990 142.333,270.395 133.549,270.794 132.305 L 271.519 130.041 260.863 130.041 C 253.835 130.041,250.206 130.341,250.206 130.923 M271.832 148.354 C 269.088 158.426,266.902 166.735,266.974 166.817 C 267.191 167.066,293.827 131.081,293.827 130.541 C 293.827 130.266,290.001 130.041,285.324 130.041 L 276.822 130.041 271.832 148.354 M31.276 355.556 L 31.276 394.239 47.585 394.239 C 83.728 394.239,97.091 383.797,97.091 355.556 C 97.091 327.297,83.750 316.872,47.585 316.872 L 31.276 316.872 31.276 355.556 M67.352 329.665 C 88.467 335.936,88.535 375.155,67.441 381.420 C 64.591 382.266,59.842 382.716,53.760 382.716 L 44.444 382.716 44.444 355.556 L 44.444 328.395 53.760 328.395 C 59.759 328.395,64.598 328.847,67.352 329.665 M120.769 334.999 C 103.743 339.299,95.132 359.364,102.182 378.310 C 108.843 396.211,136.019 401.465,150.000 387.556 C 155.878 381.708,155.871 381.538,149.624 378.584 L 144.516 376.169 142.246 378.923 C 133.491 389.545,116.619 384.924,113.270 370.988 L 112.726 368.724 134.141 368.724 L 155.556 368.724 155.556 361.759 C 155.556 342.173,139.938 330.159,120.769 334.999 M186.003 334.925 C 182.220 336.076,178.376 338.416,176.007 341.010 L 173.663 343.577 173.663 339.690 L 173.663 335.802 167.490 335.802 L 161.317 335.802 161.317 365.021 L 161.317 394.239 167.846 394.239 L 174.374 394.239 174.636 375.514 L 174.897 356.790 177.196 352.879 C 181.145 346.161,189.630 343.628,195.729 347.346 C 200.415 350.203,200.823 352.375,200.823 374.459 L 200.823 394.239 207.407 394.239 L 213.992 394.239 213.996 377.160 C 214.003 351.863,216.867 345.673,228.560 345.682 C 239.009 345.690,240.329 348.918,240.329 374.459 L 240.329 394.239 246.961 394.239 L 253.593 394.239 253.340 371.399 C 253.099 349.729,252.994 348.387,251.283 345.190 C 244.554 332.615,225.005 330.403,214.667 341.048 L 211.754 344.047 208.134 340.428 C 202.877 335.170,193.148 332.752,186.003 334.925 M279.603 335.002 C 253.139 341.679,250.666 383.771,276.173 393.371 C 286.925 397.418,301.547 394.750,308.897 387.399 C 319.588 376.708,319.526 352.580,308.781 342.120 C 302.349 335.859,289.058 332.617,279.603 335.002 M336.407 335.000 C 326.276 337.557,320.165 344.177,320.165 352.595 C 320.165 362.789,325.366 367.011,342.082 370.388 C 351.677 372.327,355.056 373.643,355.867 375.757 C 359.808 386.026,338.954 387.788,329.557 377.981 L 326.030 374.300 321.863 377.814 C 316.876 382.019,316.830 382.387,320.782 386.395 C 336.605 402.444,369.439 395.983,369.529 376.803 C 369.578 366.472,365.739 363.359,348.351 359.626 C 336.760 357.138,333.333 355.412,333.333 352.066 C 333.333 343.182,350.329 342.581,357.746 351.202 L 360.349 354.227 364.193 351.076 C 369.117 347.042,369.361 346.257,366.754 342.840 C 361.803 336.349,346.611 332.424,336.407 335.000 M137.182 347.792 C 140.126 350.037,142.387 354.113,142.387 357.175 C 142.387 358.793,141.914 358.848,127.984 358.848 C 111.923 358.848,112.221 358.977,115.139 353.259 C 119.356 344.997,130.043 342.346,137.182 347.792 M294.675 346.708 C 308.479 353.682,306.210 381.100,291.569 384.240 C 280.887 386.531,273.407 380.225,271.933 367.686 C 270.017 351.384,282.018 340.314,294.675 346.708 "
-                        stroke="none" fill="currentColor" fill-rule="evenodd"></path>
-                </g>
-            </svg> </a> <a class="quick-view-link quick-view-buy" target="_blank" href="http://1.envato.market/5bvdaj">
-            <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="400" height="400" viewBox="0, 0, 400,400">
-                <g id="svgg">
-                    <path id="path0"
-                        d="M304.906 15.509 C 283.300 19.268,275.831 27.762,271.422 53.585 L 269.811 63.019 176.981 63.405 C 125.925 63.617,83.387 64.081,82.453 64.436 C 80.725 65.093,79.735 73.962,81.389 73.962 C 81.738 73.962,82.455 75.915,82.983 78.302 C 83.510 80.689,84.281 83.062,84.697 83.575 C 85.112 84.089,85.226 85.097,84.950 85.816 C 84.674 86.535,84.704 86.869,85.016 86.557 C 85.327 86.245,86.508 89.482,87.639 93.750 C 90.679 105.223,92.925 112.733,93.570 113.585 C 93.885 114.000,94.571 116.208,95.094 118.491 C 95.618 120.774,96.304 122.981,96.619 123.396 C 96.934 123.811,97.797 126.698,98.538 129.811 C 99.278 132.925,100.113 135.642,100.392 135.849 C 100.671 136.057,101.122 137.890,101.394 139.924 C 101.666 141.957,102.189 143.995,102.555 144.452 C 102.922 144.909,103.469 146.472,103.771 147.925 C 106.014 158.724,115.075 168.252,124.815 170.053 C 131.231 171.239,239.306 171.245,245.702 170.060 C 252.150 168.865,260.919 162.727,262.273 158.463 C 262.532 157.648,263.020 156.981,263.359 156.981 C 263.698 156.981,264.207 156.217,264.491 155.283 C 266.121 149.922,266.681 147.552,268.011 140.377 C 268.819 136.019,269.789 130.925,270.167 129.057 C 270.545 127.189,270.874 124.212,270.898 122.443 C 270.923 120.673,271.266 118.635,271.660 117.914 C 272.054 117.194,272.922 112.528,273.590 107.547 C 274.258 102.566,275.116 97.472,275.497 96.226 C 275.878 94.981,276.713 90.906,277.353 87.170 C 277.992 83.434,279.153 76.642,279.932 72.075 C 280.710 67.509,281.700 62.415,282.131 60.755 C 282.561 59.094,283.457 54.237,284.120 49.960 C 286.617 33.874,291.267 29.358,307.547 27.210 C 317.483 25.899,319.245 24.805,319.245 19.950 C 319.245 14.160,316.875 13.426,304.906 15.509 M124.906 182.672 C 115.898 184.837,106.438 193.678,103.394 202.775 C 101.894 207.259,101.356 216.187,102.542 216.920 C 102.903 217.143,103.411 218.659,103.672 220.290 C 105.343 230.737,117.712 239.245,131.231 239.245 C 150.631 239.245,162.305 224.833,158.880 205.110 C 156.221 189.799,139.954 179.056,124.906 182.672 M234.340 182.718 C 222.116 185.470,211.883 198.326,211.872 210.943 C 211.848 239.778,249.766 250.529,265.432 226.130 C 278.906 205.143,258.887 177.192,234.340 182.718 M3.774 330.633 L 3.774 366.171 22.830 365.857 C 45.010 365.492,47.121 365.027,52.930 359.218 C 61.617 350.530,58.579 333.550,47.855 330.858 C 45.951 330.381,45.965 330.351,48.990 328.547 C 58.836 322.675,58.806 305.837,48.937 299.181 C 43.932 295.805,38.943 295.094,20.251 295.094 L 3.774 295.094 3.774 330.633 M193.962 330.539 L 193.962 366.038 199.623 366.038 L 205.283 366.038 205.283 338.682 L 205.283 311.327 209.623 318.947 C 212.009 323.138,219.396 335.444,226.038 346.293 L 238.113 366.019 245.472 366.028 L 252.830 366.038 252.830 330.566 L 252.830 295.094 247.179 295.094 L 241.528 295.094 241.330 322.453 L 241.132 349.811 238.286 344.528 C 236.721 341.623,229.393 329.396,222.003 317.358 L 208.565 295.472 201.263 295.256 L 193.962 295.040 193.962 330.539 M37.949 306.688 C 45.153 309.737,45.813 319.903,39.044 323.555 C 37.153 324.575,34.267 324.934,26.226 325.150 L 15.849 325.428 15.849 315.544 L 15.849 305.660 25.685 305.660 C 32.292 305.660,36.317 305.998,37.949 306.688 M277.535 311.717 C 253.189 317.864,251.080 356.471,274.606 365.328 C 293.198 372.327,310.733 360.806,311.561 341.047 C 312.443 320.002,297.100 306.776,277.535 311.717 M63.396 331.741 C 63.396 353.755,63.791 356.258,68.028 361.070 C 74.978 368.966,94.810 368.742,99.825 360.710 C 101.270 358.397,101.887 358.975,101.887 362.642 L 101.887 366.038 107.170 366.038 L 112.453 366.038 112.453 339.245 L 112.453 312.453 106.415 312.453 L 100.377 312.453 100.377 329.081 C 100.377 351.453,97.768 356.891,86.996 356.965 C 77.106 357.032,75.906 354.309,75.613 331.132 L 75.376 312.453 69.386 312.453 L 63.396 312.453 63.396 331.741 M113.962 312.965 C 113.962 313.484,128.386 348.735,133.207 360.000 L 135.827 366.120 133.686 370.841 C 130.133 378.678,125.474 380.727,118.868 377.358 C 114.964 375.368,115.177 375.264,113.723 379.878 C 111.997 385.353,111.967 385.265,116.178 387.077 C 126.883 391.682,137.600 387.957,142.798 377.824 C 144.521 374.464,168.302 314.085,168.302 313.069 C 168.302 312.730,165.500 312.456,162.075 312.460 L 155.849 312.468 149.506 331.140 C 146.017 341.409,142.837 350.660,142.439 351.698 C 141.772 353.435,141.572 353.166,139.920 348.302 C 138.932 345.396,135.703 336.142,132.743 327.736 L 127.362 312.453 120.662 312.453 C 116.977 312.453,113.962 312.683,113.962 312.965 M308.725 313.019 C 308.750 313.330,312.743 325.302,317.598 339.623 L 326.427 365.660 333.180 365.660 L 339.934 365.660 345.981 346.619 L 352.029 327.578 358.472 346.619 L 364.914 365.660 371.598 365.660 L 378.282 365.660 386.779 340.715 C 391.452 326.995,395.512 315.023,395.802 314.111 C 396.317 312.488,396.185 312.453,389.627 312.453 L 382.926 312.453 377.312 332.069 C 374.224 342.858,371.514 351.688,371.288 351.692 C 371.063 351.695,368.145 342.953,364.804 332.264 L 358.731 312.830 352.414 312.830 L 346.096 312.830 340.029 332.260 C 336.692 342.947,333.777 351.692,333.551 351.694 C 333.324 351.696,330.616 342.868,327.533 332.075 L 321.926 312.453 315.303 312.453 C 311.660 312.453,308.700 312.708,308.725 313.019 M293.241 323.371 C 303.979 331.561,300.778 354.235,288.512 356.866 C 274.639 359.841,265.528 343.580,272.617 328.499 C 276.152 320.979,286.675 318.363,293.241 323.371 M39.971 336.966 C 47.213 340.711,47.213 350.609,39.971 354.355 C 38.354 355.191,35.049 355.472,26.830 355.472 L 15.849 355.472 15.849 345.660 L 15.849 335.849 26.830 335.849 C 35.049 335.849,38.354 336.130,39.971 336.966 "
-                        stroke="none" fill="currentColor" fill-rule="evenodd"></path>
-                </g>
-            </svg> </a>
-    </div> -->
+   
     <script>
         (function () {
             function maybePrefixUrlField() {
-                if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
+                if (
+                    this.value.trim() !== "" &&
+                    this.value.indexOf("http") !== 0
+                ) {
                     this.value = "http://" + this.value;
                 }
             }
-            var urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]');
+            var urlFields = document.querySelectorAll(
+                '.mc4wp-form input[type="url"]'
+            );
             if (urlFields) {
                 for (var j = 0; j < urlFields.length; j++) {
-                    urlFields[j].addEventListener('blur', maybePrefixUrlField);
+                    urlFields[j].addEventListener(
+                        "blur",
+                        maybePrefixUrlField
+                    );
                 }
             }
         })();
     </script>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "itemListElement": [{
-                "@type": "ListItem",
-                "position": 1,
-                "url": "https://foxiz.themeruby.com/tech/best-fujifilm-cameras-for-every-photographer/",
-                "name": "Best Fujifilm Cameras for Every Photographer",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t40.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 2,
-                "url": "https://foxiz.themeruby.com/tech/are-smartwatches-the-future-of-wearable-devices/",
-                "name": "Are Smartwatches the Future of Wearable Devices?",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t12.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 3,
-                "url": "https://foxiz.themeruby.com/tech/10-reasons-to-choose-playstation-5-as-your-next-console/",
-                "name": "10 Reasons to Choose PlayStation 5 As Your Next Console",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t14.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 4,
-                "url": "https://foxiz.themeruby.com/tech/seeking-suggestions-regarding-headsets-for-conference-interpreters/",
-                "name": "Seeking Suggestions Regarding Headsets for Conference Interpreters",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t17.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 5,
-                "url": "https://foxiz.themeruby.com/tech/top-10-best-portable-bluetooth-speakers-for-summer-fun/",
-                "name": "Top 10 Best Portable Bluetooth Speakers for Summer Fun",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t20.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 6,
-                "url": "https://foxiz.themeruby.com/tech/top-10-largest-hot-high-quality-earphone-handsfree/",
-                "name": "Top 10 Largest Hot High-Quality Earphone Handsfree",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t24.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 7,
-                "url": "https://foxiz.themeruby.com/tech/linkedin-launches-new-formats-for-live-events/",
-                "name": "LinkedIn launches New Formats for Live Events",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t44.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 8,
-                "url": "https://foxiz.themeruby.com/tech/portable-bluetooth-speakersthat-can-go-literally-anywhere/",
-                "name": "Portable Bluetooth Speakers That can Go Literally Anywhere",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t3.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 9,
-                "url": "https://foxiz.themeruby.com/tech/should-i-replace-my-upright-vacuum-with-a-cleaning-robot/",
-                "name": "Should I Replace My Upright Vacuum with a Cleaning Robot?",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t13.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 10,
-                "url": "https://foxiz.themeruby.com/tech/heres-why-business-needs-a-mobile-friendly-website/",
-                "name": "Here\u2019s Why Business Needs a Mobile-Friendly Website",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/22.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 11,
-                "url": "https://foxiz.themeruby.com/tech/corsair-hs80-rgb-wireless-gaming-headset-review/",
-                "name": "Corsair HS80 RGB Wireless Gaming Headset Review",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t43.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 12,
-                "url": "https://foxiz.themeruby.com/tech/the-samsung-galaxy-s21-ultra-5g-awarded-best-smartphone/",
-                "name": "The Samsung Galaxy S21 Ultra 5G Awarded Best Smartphone",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t2..jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 13,
-                "url": "https://foxiz.themeruby.com/tech/apple-iphone-13-pro-battery-highly-efficient-device/",
-                "name": "Apple iPhone 13 Pro Battery: Highly Efficient Device",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/08/t12.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 14,
-                "url": "https://foxiz.themeruby.com/tech/the-4-best-laptops-in-2021-for-work-general-use/",
-                "name": "The 4 Best Laptops in 2021 for Work, General Use",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t19.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 15,
-                "url": "https://foxiz.themeruby.com/tech/top-rated-products-in-wireless-portable-bluetooth-speakers/",
-                "name": "Top Rated Products in Wireless &amp; Portable Bluetooth Speakers",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t600.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 16,
-                "url": "https://foxiz.themeruby.com/tech/5-ways-to-manage-your-spending-on-multiple-credit-cards/",
-                "name": "5 Ways to Manage Your spending on Multiple Credit Cards",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/40.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 17,
-                "url": "https://foxiz.themeruby.com/tech/bluetooth-technology-work-in-tandem-for-indoor-positioning-system/",
-                "name": "Bluetooth Technology Work in Tandem for Indoor Positioning System",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/35.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 18,
-                "url": "https://foxiz.themeruby.com/tech/start-a-digital-marketing-website-for-your-service/",
-                "name": "Start a Digital Marketing Website for your Service",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/7.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 19,
-                "url": "https://foxiz.themeruby.com/tech/top-tech-trends-great-gadgets-to-help-you/",
-                "name": "Top Tech Trends: Great Gadgets to Help You",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/36.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 20,
-                "url": "https://foxiz.themeruby.com/tech/apple-jul-announcement-what-a-refresh-for-macbook/",
-                "name": "Apple Jul Announcement: What a Refresh for Macbook",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/31.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 21,
-                "url": "https://foxiz.themeruby.com/tech/sw-tech-shows-the-future-of-next-gen-vr-with-prototype-headset/",
-                "name": "SW Tech Lihats The Future of Next-Gen VR with Prototype Headset",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/26.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 22,
-                "url": "https://foxiz.themeruby.com/tech/advantages-and-disadvantages-of-having-smartphone/",
-                "name": "Advantages and Disadvantages of Having Smartphone",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/30.jpg"
-            }, {
-                "@type": "ListItem",
-                "position": 23,
-                "url": "https://foxiz.themeruby.com/tech/best-beaches-in-the-uk-for-the-perfect-sandy-getaway/",
-                "name": "Best beaches in the UK for the Perfect Sandy Getaway",
-                "image": "https://foxiz.themeruby.com/tech/wp-content/uploads/sites/3/2021/12/t45.jpg"
-            }]
-        }
-    </script>
-    <div id="rb-user-popup-form" class="rb-user-popup-form mfp-animation mfp-hide">
-        <div class="logo-popup-outer">
-            <div class="logo-popup">
-                <div class="login-popup-header">
-                    <div class="logo-popup-logo"> <img loading="lazy" decoding="async"
-                            src="wp-content/uploads/sites/3/2022/02/login.png" alt="" height="200" width="200"></div>
-                    <span class="logo-popup-heading h3">Welcome Back!</span>
-                    <p class="logo-popup-description is-meta">Sign in to your account</p>
-                </div>
-                <div class="user-form">
-                    <form name="popup-form" id="popup-form" action="https://foxiz.themeruby.com/tech/wp-login.php"
-                        method="post">
-                        <p class="login-username"> <label for="user_login">Username or Email Address</label> <input
-                                type="text" name="log" id="user_login" autocomplete="username" class="input" value=""
-                                size="20" /></p>
-                        <p class="login-password"> <label for="user_pass">Password</label> <input type="password"
-                                name="pwd" id="user_pass" autocomplete="current-password" class="input" value=""
-                                size="20" /></p>
-                        <p class="login-remember"><label><input name="rememberme" type="checkbox" id="rememberme"
-                                    value="forever" /> Remember Me</label></p>
-                        <p class="login-submit"> <input type="submit" name="wp-submit" id="wp-submit"
-                                class="button button-primary" value="Log In" /> <input type="hidden" name="redirect_to"
-                                value="https://foxiz.themeruby.com/tech" /></p>
-                    </form>
-                </div>
-                <div class="user-form-footer is-meta"> <a href="wp-loginc2b6.html?action=lostpassword">Lost your
-                        password?</a></div>
-            </div>
-        </div>
-    </div>
-    <script id='foxiz-core-js-extra'>
+    
+    <script id="foxiz-core-js-extra">
         var foxizCoreParams = {
-            "ajaxurl": "https:\/\/foxiz.themeruby.com\/tech\/wp-admin\/admin-ajax.php",
-            "darkModeID": "D_foxiz.themeruby.com_tech"
+            ajaxurl:
+                "https:\/\/foxiz.themeruby.com\/tech\/wp-admin\/admin-ajax.php",
+            darkModeID: "D_foxiz.themeruby.com_tech",
         };
     </script>
-    <script id='foxiz-global-js-extra'>
+    <script id="foxiz-global-js-extra">
         var foxizParams = {
-            "ajaxurl": "https:\/\/foxiz.themeruby.com\/tech\/wp-admin\/admin-ajax.php",
-            "twitterName": "",
-            "sliderSpeed": "5000",
-            "sliderEffect": "slide",
-            "sliderFMode": "1"
+            ajaxurl:
+                "https:\/\/foxiz.themeruby.com\/tech\/wp-admin\/admin-ajax.php",
+            twitterName: "Technology",
+            highlightShares: "1",
+            highlightShareFacebook: "1",
+            highlightShareTwitter: "1",
+            highlightShareReddit: "1",
+            sliderSpeed: "5000",
+            sliderEffect: "slide",
+            sliderFMode: "1",
         };
         var uid_notification = {
-            "uuid": "uid_notification",
-            "name": "list_small_2",
-            "order": "post_date",
-            "posts_per_page": "5",
-            "pagination": "infinite_scroll",
-            "entry_meta": ["category"],
-            "sponsor_meta": "1",
-            "middle_mode": "1",
-            "paged": "1",
-            "page_max": "8"
-        };
-        var uid_9262f1d = {
-            "uuid": "uid_9262f1d",
-            "name": "list_box_1",
-            "order": "date_post",
-            "posts_per_page": "3",
-            "offset": "14",
-            "pagination": "load_more",
-            "crop_size": "foxiz_crop_g2",
-            "entry_category": "bg-2",
-            "entry_meta": ["avatar", "author", "read"],
-            "review": "replace",
-            "review_meta": "1",
-            "sponsor_meta": "1",
-            "bookmark": "1",
-            "entry_format": "bottom",
-            "excerpt": "1",
-            "excerpt_length": "20",
-            "box_style": "bg",
-            "paged": "1",
-            "page_max": "8"
+            uuid: "uid_notification",
+            name: "list_small_2",
+            order: "post_date",
+            posts_per_page: "5",
+            pagination: "infinite_scroll",
+            entry_meta: ["category"],
+            sponsor_meta: "1",
+            middle_mode: "1",
+            paged: "1",
+            page_max: "8",
         };
     </script>
-    <script id='elementor-frontend-js-before'>
-        var elementorFrontendConfig = {
-            "environmentMode": {
-                "edit": false,
-                "wpPreview": false,
-                "isScriptDebug": false
-            },
-            "i18n": {
-                "shareOnFacebook": "Share on Facebook",
-                "shareOnTwitter": "Share on Twitter",
-                "pinIt": "Pin it",
-                "download": "Download",
-                "downloadImage": "Download image",
-                "fullscreen": "Fullscreen",
-                "zoom": "Zoom",
-                "share": "Share",
-                "playVideo": "Play Video",
-                "previous": "Previous",
-                "next": "Next",
-                "close": "Close"
-            },
-            "is_rtl": false,
-            "breakpoints": {
-                "xs": 0,
-                "sm": 480,
-                "md": 768,
-                "lg": 1025,
-                "xl": 1440,
-                "xxl": 1600
-            },
-            "responsive": {
-                "breakpoints": {
-                    "mobile": {
-                        "label": "Mobile",
-                        "value": 767,
-                        "default_value": 767,
-                        "direction": "max",
-                        "is_enabled": true
-                    },
-                    "mobile_extra": {
-                        "label": "Mobile Extra",
-                        "value": 880,
-                        "default_value": 880,
-                        "direction": "max",
-                        "is_enabled": false
-                    },
-                    "tablet": {
-                        "label": "Tablet",
-                        "value": 1024,
-                        "default_value": 1024,
-                        "direction": "max",
-                        "is_enabled": true
-                    },
-                    "tablet_extra": {
-                        "label": "Tablet Extra",
-                        "value": 1200,
-                        "default_value": 1200,
-                        "direction": "max",
-                        "is_enabled": false
-                    },
-                    "laptop": {
-                        "label": "Laptop",
-                        "value": 1366,
-                        "default_value": 1366,
-                        "direction": "max",
-                        "is_enabled": false
-                    },
-                    "widescreen": {
-                        "label": "Widescreen",
-                        "value": 2400,
-                        "default_value": 2400,
-                        "direction": "min",
-                        "is_enabled": false
-                    }
-                }
-            },
-            "version": "3.8.1",
-            "is_static": false,
-            "experimentalFeatures": {
-                "e_dom_optimization": true,
-                "e_optimized_assets_loading": true,
-                "e_optimized_css_loading": true,
-                "a11y_improvements": true,
-                "additional_custom_breakpoints": true,
-                "e_import_export": true,
-                "e_hidden_wordpress_widgets": true,
-                "landing-pages": true,
-                "elements-color-picker": true,
-                "favorite-widgets": true,
-                "admin-top-bar": true
-            },
-            "urls": {
-                "assets": "https:\/\/foxiz.themeruby.com\/tech\/wp-content\/plugins\/elementor\/assets\/"
-            },
-            "settings": {
-                "page": [],
-                "editorPreferences": []
-            },
-            "kit": {
-                "active_breakpoints": ["viewport_mobile", "viewport_tablet"],
-                "global_image_lightbox": "yes",
-                "lightbox_enable_counter": "yes",
-                "lightbox_enable_fullscreen": "yes",
-                "lightbox_enable_zoom": "yes",
-                "lightbox_enable_share": "yes",
-                "lightbox_title_src": "title",
-                "lightbox_description_src": "description"
-            },
-            "post": {
-                "id": 1465,
-                "title": "Technology%20%E2%80%93%20Foxiz%20Theme%20Demos",
-                "excerpt": "",
-                "featuredImage": false
-            }
-        };
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script src="{{asset('assets/jquery.min.js')}}"></script>
+    <script defer src="../wp-content/cache/autoptimize/3/js/autoptimize_718556d81bf3bd4ff92c02852c025dd3.js"></script>
+  
+    <script>
+        $(document).ready(function () {
+            $('.balaskomen').click(function () {
+                var id = $(this).data('id');
+                console.log(id)
+                $('#'+id).toggle('slide')
+            })
+        })
     </script>
-    <script defer src="wp-content/cache/autoptimize/3/js/autoptimize_23f21e18a67393905ebd2f45fc9eab3f.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.balaskomen1').click(function () {
+                var id = $(this).data('id');
+                console.log(id)
+                $('#'+id).toggle('slide')
+            })
+        })
+    </script>
 </body>
 
 </html>

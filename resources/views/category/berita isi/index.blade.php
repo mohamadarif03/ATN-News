@@ -18,18 +18,7 @@
     <style media="all">
         @charset "UTF-8";
 
-        /* .parentDiv {
-  border: 1px solid black;
-  padding: 10px;
-  width: 80px;
-  margin: 5px;
-  display: relative;
-}
-.childDiv {
-  border: 1px solid blue;
-  height: 50px;
-  margin: 10px;
-} */
+      
 
         .wp-block-archives-dropdown label {
             display: block;
@@ -25812,16 +25801,10 @@
                                                {!!$data->isi!!} 
                                                 <h3>Tag:</h3>
                                                @foreach ($data->tags as $tag)
-                                                                
-
-                                                                   
-                                               <button class="btn btn-light mb-3">
-                                                   {{$tag->tag}}    
-                                                   
-                                                   
-                                               </button>
-                                               
-                                               
+                                               <form action="{{url('tag')}}" method="get" class="rb-search-form">
+                                                <input class="form-control me-1" type="search" style="color: white" name="katakunci" value="{{$tag->tag}}" placeholder="Masukkan kata kunci" aria-label="Search">
+                                                <button type="submit">{{$tag->tag}}</button>
+                                                </form>
                                                @endforeach             
                                             </p>
 
@@ -25981,6 +25964,17 @@
                                                                                     {{$childs->komentar}}
                                                                                     
                                                                                 </div>
+                                                                                <form action="/komentar/{{$data->id}}" method="post" id="balas-{{$row->id}}" class="mb-3">
+                                                                                    @csrf
+                                                                                    <input type="hidden" name="parent" value="{{$childs->id}}">
+                                                                                    {{-- <input type="text"  name="komentar" class="form-control mt-3 mb-3"  placeholder="Balas Komentar" id=""> --}}
+                                                                                    <textarea id="komentar" name="komentar" placeholder="Balas Komentar" cols="45" rows="8" class="mb-3 mt-5" required></textarea>
+        
+                                                                                    
+                                                                                    <input type="submit" class="is-btn header-element" style="margin-top: 8px" value="Balas">
+                            
+        
+                                                                                </form>
                                                                                 
                                                                                 
                                                                             </div>

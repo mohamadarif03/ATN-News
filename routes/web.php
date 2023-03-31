@@ -30,6 +30,7 @@ use App\Http\Controllers\politikController;
 use App\Http\Controllers\PrivasiController;
 use App\Http\Controllers\searchController;
 use App\Http\Controllers\sponsorController;
+use App\Http\Controllers\tagController;
 use App\Http\Controllers\tolakController;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
@@ -280,11 +281,14 @@ Route::get('/isikategori/{id}', [NavbarController::class, 'index'])->name('isika
 
 Route::get('search', [searchController::class, 'index'])->name('search');
 
+Route::get('tag', [tagController::class, 'index'])->name('tag');
+
 Route::get('privasi', [PrivasiController::class, 'privasi'])->name('privasi');
 
 Route::get('kontak', [kontakController::class, 'index']);
 Route::post('kontak', [kontakController::class, 'create'])->name('kontak');
 
 Route::get('isi/{id}', [isiController::class, 'index'])->name('isi');
+
 
 

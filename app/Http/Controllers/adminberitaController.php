@@ -15,15 +15,7 @@ class adminberitaController extends Controller
     {
         $katakunci = $request->katakunci;
 
-        // $data = User::query()
-        //     ->withCount('berita')
-        //     ->where('username', 'LIKE', '%' . $katakunci . '%')
-        //     ->where('role_id', 2)
-        //     ->where('status', 'aktif')
-        //     ->orderBy('berita_count', 'desc')
-        //     ->paginate(5);
-
-        // dd($data);  
+      
         $kontak = Kontak::all();
         $data = User::query()
         ->withCount('berita')

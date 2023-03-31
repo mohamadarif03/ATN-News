@@ -71,6 +71,11 @@
 
                     <div class="row" >
                         <div class="col-12">
+                        @if (Session::has('sukses'))
+                    <div class="alert alert-success mt-4" role="alert" style="margin-right: 250px; margin-left: 250px">
+                    {{Session::get('sukses')}}
+                    </div>
+                    @endif
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -91,7 +96,7 @@
                                             <div class="col-sm-12">
                                                 <div class="mb-3" style="color:black">
                                                     <!-- <input type="longtext" class="form-control" name='isi'> -->
-                                                    <textarea id="summernote" name="isi">{{$data->isi}}
+                                                    <textarea id="summernote" name="isi" required>{{$data->isi}}
                                                     </textarea>
                                                 </div>
                                             </div>

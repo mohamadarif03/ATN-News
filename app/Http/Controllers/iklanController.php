@@ -26,9 +26,11 @@ class iklanController extends Controller
     public function insertiklan(Request $request){
         $request->validate([
             'sponsor'=>'required',
+            'deskripsi'=>'required',
             'foto'=>'required|mimes:jpg, jpeg',
         ],[
             'sponsor.required'=>'Kolom iklan Wajib Diisi',
+            'deskripsi.required'=>'Kolom Deskripsi Wajib Diisi',
             'foto.required'=>'Kolom Foto Wajib Diisi',
             'foto.mimes'=>'Foto Wajib Berformat JPG, JPEG',
         ]);
@@ -41,7 +43,11 @@ class iklanController extends Controller
 
         $data = sponsor::create([
             'sponsor' => $request->sponsor,
-            'foto' => $foto_nama
+            'deskripsi' => $request->deskripsi,
+            'foto' => $foto_nama,
+            'mulai' => $request->mulai,
+            'akhir' => $request->akhir,
+            'status' => 'aktif'
            ]);
        return redirect()->route('iklan')->with('success','Data Berhasil Di Tambahkan');
     }

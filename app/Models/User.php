@@ -72,4 +72,5 @@ class User extends Authenticatable
     {
         return $this->hasMany(berita::class, 'editor')->where('status', 'ditolak');
     }
+ 
 }

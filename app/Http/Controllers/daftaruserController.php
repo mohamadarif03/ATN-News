@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\berita;
 use App\Models\Kontak;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class daftaruserController extends Controller
 {
@@ -16,12 +19,21 @@ class daftaruserController extends Controller
         return redirect('user')->with('sukses','Data Berhasil Di Hapus');
 
     }
-    public function banned($id){
+    public function banned($id)
+    {
+        
+
         $data = User::find($id);
         $data->update([
             'status' => 'banned',
-        ]
-        );
+        ]);
+        $berita = berita::where('penulis', $id);
+        $berita->update([
+            'status' => 'banned',
+        ]);
+
+       
+
         return redirect()->route('dibanned')->with('sukses','Data Berhasil Di Perbarui');
 
     }
@@ -36,10 +48,7 @@ class daftaruserController extends Controller
         }else{
             $data = $data->paginate(5);
         }
-       
         // $datap = peminjaman::with('nama', 'buku')->orderBy('id', 'desc')->paginate(5);
-        
-        
         $kontak = Kontak::all();
        
         return view('admin.dibanned.index',['data' => $data, 'kontak' => $kontak]);
@@ -48,9 +57,15 @@ class daftaruserController extends Controller
         $data = User::find($id);
         $data->update([
             'status' => 'aktif',
-        ]
-        );
-        return redirect()->route('user')->with('sukses','Data Berhasil Di Perbarui');
+        ]);
+        $berita = berita::where('penulis', $id);
+        $berita->update([
+            'status' => 'diterima',
+        ]);
+
+        
+       
+        return redirect()->back()->with('sukses','Data Berhasil Di Perbarui');
 
     }
     public function daftarbanned(Request $request){

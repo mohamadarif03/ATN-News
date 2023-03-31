@@ -9,6 +9,7 @@ use App\Models\penghargaan;
 use App\Models\sosmed;
 use App\Models\sponsor;
 use App\Models\tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +17,7 @@ class HalamanutamaController extends Controller
 {
     public function index()
     {
+        $user = User::where('status', 'aktif')->get();
         $berita = berita::where('status', 'diterima')->limit(2)->orderBy('view', 'desc')->get();
         $berita1 = berita::where('status', 'diterima')->limit(1)->orderBy('view', 'desc')->skip(2)->get();
         $berita2 = berita::where('status', 'diterima')->limit(2)->orderBy('view', 'desc')->skip(4)->get();
@@ -53,6 +55,7 @@ class HalamanutamaController extends Controller
         'penghargaan' => $penghargaan,
         'iklan1' => $iklan1,
         'sosmed' => $sosmed,
+        'user' => $user,
         // 'navbar2' => $navbar2,
         // 'navbar3' => $navbar3,
         // 'navbar4' => $navbar4,
@@ -60,7 +63,7 @@ class HalamanutamaController extends Controller
     ]);
     }
     public function isi($id){
-
+        
         $berita = berita::where('status', 'diterima')->limit(5)->orderBy('created_at', 'desc')->get();
         $kategori = Kategori::limit(5)->orderBy('created_at', 'desc')->get();
         $kategori2 = Kategori::limit(10)->orderBy('created_at', 'desc')->skip(5)->get();

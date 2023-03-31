@@ -27,4 +27,7 @@ class berita extends Model
     {
         return $this->hasMany(keywoard::class, 'berita_id', 'id');
     }
+
+   
+
 }

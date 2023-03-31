@@ -90,7 +90,10 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Iklan</th>
+                                                            <th>Deskripsi</th>
                                                             <th>Foto</th>
+                                                            <th>Iklan Dimulai</th>
+                                                            <th>Iklan Berakhir</th>
                                                             <th>Aksi</th>
                                                         </tr>
                                                     </thead>
@@ -100,10 +103,13 @@
                                                             <tr>
                                                                 <th scope="row">{{ $i }}</th>
                                                                 <td>{{ $row->sponsor }}</td>
+                                                                <td>{{ $row->deskripsi }}</td>
                                                                 <td>
                                                                     <img src="{{ asset('fotoiklan/' . $row->foto) }}" alt=""
                                                                         style="width:100px;">
                                                                 </td>
+                                                                <td>{{$row->mulai}}</td>
+                                                                <td>{{$row->akhir}}</td>
                                                                 <td>
                                                                     <a href="/tampiliklan/{{ $row->id }}"
                                                                         class="btn btn-info" style="color: white;"><i class="mdi mdi-pencil"></i></a>

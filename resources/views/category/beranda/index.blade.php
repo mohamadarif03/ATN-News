@@ -30580,6 +30580,25 @@
                 </section>
             </div>
         </div>
+        @php
+            $no=0;
+        @endphp 
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                
+                @foreach($penghargaan as $beritas)
+                <div class="carousel-item @if($no == 0) active  @endif">
+                    <img src="{{ asset('fotopenghargaan/'. $beritas->foto ) }}" alt="berita" 
+                    style="width: 400px;float: left;margin-bottom: 20px; margin:30px">
+                  </div>
+                  @php 
+                    $no++
+                  @endphp
+                @endforeach
+             
+             
+            </div>
+          </div>
         @include('layouts.utama.footer')
     </div>
     <script>

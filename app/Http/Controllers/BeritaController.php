@@ -52,7 +52,7 @@ class BeritaController extends Controller
             'isi' => 'required',
             'foto' => 'required|dimensions:min_width=1000,min_height=600',
             'tag' => 'required',
-            
+            'keywoard' => 'required',
             // 'kategori_id' => 'required',
         ],[
             'judul.required' => 'Judul Wajib Diisi',
@@ -62,7 +62,7 @@ class BeritaController extends Controller
             'foto.required' => 'Foto Wajib Diisi',
             'foto.dimensions' => 'Sesuaikan Ukuran Foto',
             'tag.required' => 'Tag Wajib Diisi',
-            
+            'keywoard.required' => 'Kata Kunci Wajib Diisi',
         ]);
 
         $storage = 'berita';
@@ -117,7 +117,15 @@ class BeritaController extends Controller
         ]);
         }
 
-       
+       $tes = $request->keywoard;
+      
+       $oke = (explode(",",$tes));
+       foreach($oke as $row){
+        keywoard::create([
+            'keywoard' => $row,
+            'berita_id' => $data->id,   
+        ]);
+        }
         
         return redirect()->route('indexb')->with('success', 'Berhasil Inputkan');
     }
@@ -240,6 +248,7 @@ class BeritaController extends Controller
         $ber = kategori::all();
         $berita = berita::all();
         $tag = tag::where('berita_id', $data->id)->get();
+        $keywoard = keywoard::where('berita_id', $data->id)->get();
         // $tag = tag::where('id_berita',$id)-get();
         $tagstring = '';
         foreach($tag as $item){
@@ -248,9 +257,16 @@ class BeritaController extends Controller
             }
             $tagstring = $tagstring.$item->tag;
         }
+        $keywoardstring = '';
+        foreach($keywoard as $itemk){
+            if($keywoardstring != ''){
+                $keywoardstring = $keywoardstring.',';
+            }
+            $keywoardstring = $keywoardstring.$itemk->keywoard;
+        }
         
 
-        return view('penulis.edit.index', compact('data', 'ber', 'berita', 'tagstring'));
+        return view('penulis.edit.index', compact('data', 'ber', 'berita', 'tagstring','keywoardstring'));
     }
     public function edit_editor($id)
     {
@@ -259,6 +275,7 @@ class BeritaController extends Controller
         $ber = kategori::all();
         $berita = berita::all();
         $tag = tag::where('berita_id', $data->id)->get();
+        $keywoard = keywoard::where('berita_id', $data->id)->get();
         // $tag = tag::where('id_berita',$id)-get();
         $tagstring = '';
         foreach($tag as $item){
@@ -267,7 +284,14 @@ class BeritaController extends Controller
             }
             $tagstring = $tagstring.$item->tag;
         }
-        return view('editor.edit.index', compact('data', 'ber', 'berita', 'tagstring'));
+        $keywoardstring = '';
+        foreach($keywoard as $itemk){
+            if($keywoardstring != ''){
+                $keywoardstring = $keywoardstring.',';
+            }
+            $keywoardstring = $keywoardstring.$itemk->keywoard;
+        }
+        return view('editor.edit.index', compact('data', 'ber', 'berita', 'tagstring','keywoardstring'));
     }
 
     // public function tampilpegawai(Pegawai $id)
@@ -324,14 +348,24 @@ class BeritaController extends Controller
                 $tag->delete();
             }
     
-            $coba = $request->tag;
-            $test = explode(',', $coba);
-            foreach ($test as $row) {
-                Tag::create([
-                    'tag' => $row,
-                    'berita_id' => $data->id,
-                ]);
-            }
+       $coba = $request->tag;
+       $test = (explode(",",$coba));
+       foreach($test as $row){
+        tag::create([
+            'tag' => $row,
+            'berita_id' => $data->id,   
+
+        ]);
+        }
+
+       $test = $request->keywoard;
+       $oke = (explode(",",$test));
+       foreach($oke as $row){
+        keywoard::create([
+            'keywoard' => $row,
+            'berita_id' => $data->id,   
+        ]);
+        }
         }
       
     
@@ -384,16 +418,13 @@ class BeritaController extends Controller
             foreach ($tags as $tag) {
                 $tag->delete();
             }
-    
-            $coba = $request->tag;
-            $test = explode(',', $coba);
-            foreach ($test as $row) {
-                Tag::create([
-                    'tag' => $row,
-                    'berita_id' => $data->id,
-                ]);
+        if ($request->keywoard) {
+            $keywoards = keywoard::where('berita_id', $data->id)->get();
+            foreach ($keywoards as $keywoard) {
+                $keywoard->delete();
             }
         }
+    }
       
    
    

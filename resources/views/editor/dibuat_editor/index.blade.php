@@ -104,7 +104,7 @@
                                                     margin-left: 2.5px; --}}
                                                     <a href="/isi/{{ $berita->id }}">
                                                     <img style="" src="{{asset('foto/'. $berita->foto)}}"
-                                                        class="card-img-top" width="150" height="200" alt="...">
+                                                        class="card-img-top mt-2" width="150" height="200" alt="...">
                                                     </a>
                                                 </div>
                                                 <div class="card-body " style="">

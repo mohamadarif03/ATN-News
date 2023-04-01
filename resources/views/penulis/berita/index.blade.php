@@ -159,7 +159,12 @@
                                             <label for="kategori_id" class="col-sm-2 col-form-label">Tag</label>
                                             <div class="col-sm-10">
                                                 <input id="input-tags" value="{{old('tag')}}" autocomplete="off" name="tag" id="tag" placeholder="Tambahkan Tag">
-                                                
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="kategori_id" class="col-sm-2 col-form-label">Kata Kunci</label>
+                                            <div class="col-sm-10">
+                                                <input id="input-tag" value="{{old('keywoard')}}" autocomplete="off" name="keywoard" id="keywoard" placeholder="Tambahkan Keywoard">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
@@ -352,6 +357,11 @@
     <script src="{{asset('assets/tom-select.complete.js')}}"></script>
     <script>
         new TomSelect("#input-tags",{
+	persist: false,
+	createOnBlur: true,
+	create: true
+});
+        new TomSelect("#input-tag",{
 	persist: false,
 	createOnBlur: true,
 	create: true

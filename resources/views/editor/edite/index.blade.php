@@ -161,6 +161,13 @@
                                                 </div>
                                             </div>
                                             <div class="mb-3 row">
+                                            <label for="kategori_id" class="col-sm-2 col-form-label">Kata Kunci</label>
+                                            <div class="col-sm-10">
+                                                <input id="input-tag" value="{{$keywoardstring}}" autocomplete="off" name="keywoard" id="keywoard" placeholder="Tambahkan Keywoard">
+                                                {{-- <input id="hidden" value="" name="berita_id" id="berita_id"> --}}
+                                            </div>
+                                        </div>
+                                            <div class="mb-3 row">
                                                 <label for="privasi">
                                                 <input type="checkbox" name="privasi" id="termsCheck">
                                                     Setuju
@@ -341,6 +348,11 @@
     <script src="{{asset('assets/tom-select.complete.js')}}"></script>
     <script>
         new TomSelect("#input-tags",{
+	persist: false,
+	createOnBlur: true,
+	create: true
+});
+        new TomSelect("#input-tag",{
 	persist: false,
 	createOnBlur: true,
 	create: true
